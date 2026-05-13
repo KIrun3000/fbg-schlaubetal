@@ -22,8 +22,8 @@ export default function KontaktPage() {
       <section className="relative bg-forest-dark overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={images.landscape}
-            alt="Brandenburger Landschaft"
+            src={images.forestPath}
+            alt="Waldweg in Brandenburg"
             fill
             className="object-cover opacity-25"
             priority
