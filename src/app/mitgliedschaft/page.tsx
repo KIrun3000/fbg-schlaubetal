@@ -7,60 +7,60 @@ import { AnimateIn } from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "Mitgliedschaft — FBG Schlaubetal",
   description:
-    "Werden Sie Mitglied der FBG Schlaubetal. Erfahren Sie, welche Vorteile eine Mitgliedschaft bietet und wie Sie beitreten können.",
+    "Werden Sie Mitglied der FBG Schlaubetal. Für private Waldbesitzer in der Region Schlaubetal und Oder-Spree.",
 };
 
 const benefits = [
   {
-    title: "Bessere Holzpreise",
+    title: "Nicht allein am Holzmarkt",
     description:
-      "Durch gebündelte Vermarktung erzielen Sie als Mitglied deutlich bessere Konditionen als bei Einzelvermarktung.",
+      "Als Einzelner verkaufen Sie wenig Holz zu schlechten Konditionen. In der Gemeinschaft werden Mengen gebündelt — das verbessert Ihre Verhandlungsposition.",
   },
   {
-    title: "Fachliche Beratung",
+    title: "Jemand, den man fragen kann",
     description:
-      "Zugang zu kompetenter Beratung in allen Fragen der Waldbewirtschaftung — individuell und praxisnah.",
+      "Was tun bei Borkenkäferbefall? Welche Förderung gibt es? In der FBG haben Sie Ansprechpartner, die die Region und die Situation kennen.",
   },
   {
-    title: "Professionelle Forstarbeit",
+    title: "Auch kleine Flächen zählen",
     description:
-      "Organisation und Koordination von Forstarbeiten durch erfahrene Dienstleister, abgestimmt auf Ihre Flächen.",
+      "Gerade Besitzer kleiner Waldflächen profitieren von der Bündelung. Maßnahmen, die allein unwirtschaftlich wären, werden gemeinsam möglich.",
   },
   {
-    title: "Fördermittelberatung",
+    title: "Hilfe bei Papierkram",
     description:
-      "Unterstützung bei der Beantragung forstlicher Fördermittel — von der Antragsstellung bis zur Abwicklung.",
+      "Förderanträge, Behördenkontakt, Nachweise — die FBG unterstützt bei der Orientierung und Beantragung.",
   },
   {
-    title: "Gemeinschaft & Austausch",
+    title: "Kontakt zu Nachbarn",
     description:
-      "Teil einer Gemeinschaft von Waldbesitzern sein, die voneinander lernen und gemeinsam mehr erreichen.",
+      "In der FBG treffen Sie andere Waldbesitzer aus der Region. Der Austausch untereinander ist oft genauso hilfreich wie die formale Beratung.",
   },
   {
-    title: "Stärkere Stimme",
+    title: "Gemeinsam gehört werden",
     description:
-      "Gemeinsame Interessenvertretung gegenüber Politik, Verwaltung und Marktpartnern.",
+      "Einzelne Waldbesitzer haben politisch wenig Gewicht. Als organisierte Gemeinschaft können Interessen wirksamer vertreten werden.",
   },
 ];
 
 const steps = [
   {
     step: "1",
-    title: "Informieren",
+    title: "Kontakt aufnehmen",
     description:
-      "Nehmen Sie Kontakt zu uns auf und informieren Sie sich über die Mitgliedschaft und die Vorteile der FBG Schlaubetal.",
+      "Schreiben Sie uns eine E-Mail oder nutzen Sie das Kontaktformular. Wir beantworten Ihre Fragen und erklären, wie die FBG arbeitet.",
   },
   {
     step: "2",
     title: "Beitrittserklärung",
     description:
-      "Füllen Sie die Beitrittserklärung aus. Diese erhalten Sie von uns auf Anfrage oder als Download.",
+      "Wenn Sie sich für eine Mitgliedschaft entscheiden, erhalten Sie von uns die Beitrittserklärung. Die genauen Konditionen besprechen wir vorher.",
   },
   {
     step: "3",
-    title: "Aufnahme",
+    title: "Mitglied werden",
     description:
-      "Nach Prüfung Ihrer Beitrittserklärung werden Sie als Mitglied aufgenommen und können alle Leistungen nutzen.",
+      "Nach Eingang Ihrer Erklärung werden Sie aufgenommen. Ab dann können Sie alle Leistungen der FBG in Anspruch nehmen.",
   },
 ];
 
@@ -83,11 +83,11 @@ export default function MitgliedschaftPage() {
             Mitgliedschaft
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
-            Gemeinsam stärker.
+            Was bringt mir eine Mitgliedschaft?
           </h1>
           <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
-            Als Mitglied der FBG Schlaubetal profitieren Sie von gebündelter
-            Vermarktung, fachlicher Beratung und einer starken Gemeinschaft.
+            Für private Waldbesitzer in der Region Schlaubetal und Oder-Spree,
+            die ihren Wald nicht allein bewirtschaften wollen.
           </p>
         </div>
       </section>
@@ -97,12 +97,12 @@ export default function MitgliedschaftPage() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-              Warum Mitglied werden?
+              Sechs Gründe für die FBG
             </h2>
             <p className="mt-4 text-lg text-anthracite-light max-w-2xl mx-auto">
-              Eine Mitgliedschaft in der FBG Schlaubetal bietet Ihnen als
-              Waldbesitzer zahlreiche Vorteile — wirtschaftlich, fachlich und
-              persönlich.
+              Eine Mitgliedschaft lohnt sich vor allem dann, wenn Sie
+              Unterstützung bei Vermarktung, Bewirtschaftung oder einfach einen
+              Ansprechpartner in Forstfragen suchen.
             </p>
           </div>
 
@@ -145,37 +145,36 @@ export default function MitgliedschaftPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-                Wer kann Mitglied werden?
+                Für wen ist die FBG gedacht?
               </h2>
               <div className="mt-6 space-y-4 text-lg text-anthracite-light leading-relaxed">
                 <p>
-                  Grundsätzlich können alle Eigentümer von Waldflächen in der
-                  Region Schlaubetal und Oder-Spree Mitglied der FBG werden. Die
-                  Größe Ihrer Waldfläche spielt dabei keine Rolle — gerade
-                  kleinere Flächen profitieren besonders von der Bündelung durch
-                  die Gemeinschaft.
+                  Die FBG Schlaubetal ist offen für alle Eigentümer von
+                  Waldflächen in der Region. Die Größe Ihrer Fläche spielt
+                  dabei keine entscheidende Rolle — gerade kleinere Bestände
+                  profitieren besonders, weil sie allein kaum wirtschaftlich
+                  zu bewirtschaften sind.
                 </p>
                 <p>
-                  Ob Sie Ihren Wald aktiv bewirtschaften oder erst seit kurzem
-                  Waldeigentümer sind: Wir beraten Sie gerne und finden gemeinsam
-                  heraus, wie die FBG Sie unterstützen kann.
+                  Sie müssen kein Forstexperte sein. Viele unserer Mitglieder
+                  haben ihren Wald geerbt und suchen vor allem Orientierung
+                  und praktische Unterstützung.
                 </p>
               </div>
               <div className="mt-8 p-6 bg-warmwhite rounded-xl border border-sand-dark/50">
                 <h3 className="font-serif text-base font-bold text-anthracite mb-2">
                   Mitgliedsbeitrag
                 </h3>
-                <p className="text-sm text-anthracite-light italic">
-                  Informationen zum Mitgliedsbeitrag erhalten Sie auf Anfrage.
-                  Die genauen Konditionen werden nach Abstimmung mit der FBG hier
-                  ergänzt.
+                <p className="text-sm text-anthracite-light">
+                  Die Konditionen besprechen wir gerne persönlich. Nehmen Sie
+                  Kontakt auf — wir informieren Sie unverbindlich.
                 </p>
               </div>
             </div>
             <div className="relative">
               <Image
                 src={images.forestFloor}
-                alt="Waldboden mit Farnen — Natur und Nachhaltigkeit"
+                alt="Waldboden — Natur in der Region"
                 width={600}
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
@@ -186,15 +185,15 @@ export default function MitgliedschaftPage() {
         </div>
       </section>
 
-      {/* So funktioniert der Beitritt */}
+      {/* Beitritt */}
       <section className="py-20 lg:py-24 bg-warmwhite">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-              So werden Sie Mitglied
+              Wie läuft der Beitritt?
             </h2>
             <p className="mt-4 text-lg text-anthracite-light">
-              Der Beitritt zur FBG Schlaubetal ist unkompliziert.
+              Unkompliziert und ohne Verpflichtung zum Erstgespräch.
             </p>
           </div>
 
@@ -202,7 +201,6 @@ export default function MitgliedschaftPage() {
             {steps.map((step, index) => (
               <AnimateIn key={step.title} animation="fade-up" delay={index * 200}>
               <div className="relative text-center">
-                {/* Connector line */}
                 {index < steps.length - 1 && (
                   <div className="hidden md:block absolute top-8 left-[calc(50%+2rem)] right-[calc(-50%+2rem)] h-px bg-forest/20" />
                 )}
@@ -226,24 +224,25 @@ export default function MitgliedschaftPage() {
       <section className="py-20 lg:py-24 bg-forest-dark text-center">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-white leading-tight">
-            Bereit für den ersten Schritt?
+            Erst mal unverbindlich informieren?
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Nehmen Sie Kontakt zu uns auf — wir informieren Sie gerne
-            persönlich über die Mitgliedschaft in der FBG Schlaubetal.
+            Schreiben Sie uns — wir erklären Ihnen in Ruhe, wie die FBG
+            funktioniert und ob eine Mitgliedschaft für Ihre Situation sinnvoll
+            ist. Ganz ohne Verpflichtung.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/kontakt"
               className="inline-flex items-center justify-center rounded-lg bg-forest-light px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-forest"
             >
-              Kontakt aufnehmen
+              Nachricht schreiben
             </Link>
             <a
               href="mailto:info@waldforum.de"
               className="inline-flex items-center justify-center rounded-lg border border-white/20 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
             >
-              E-Mail schreiben
+              info@waldforum.de
             </a>
           </div>
         </div>

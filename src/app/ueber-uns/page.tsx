@@ -7,7 +7,7 @@ import { AnimateIn } from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "Über uns — FBG Schlaubetal",
   description:
-    "Erfahren Sie mehr über die Forstbetriebsgemeinschaft Schlaubetal: Wer wir sind, was uns antreibt und warum wir uns für den Wald in der Region einsetzen.",
+    "Die FBG Schlaubetal ist eine anerkannte Forstbetriebsgemeinschaft im Landkreis Oder-Spree. Wir bündeln die Interessen privater Waldbesitzer in der Region.",
 };
 
 export default function UeberUnsPage() {
@@ -26,14 +26,14 @@ export default function UeberUnsPage() {
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
           <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-3">
-            Über uns
+            Über die FBG
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
-            Wer wir sind
+            Eine Gemeinschaft für den Privatwald in der Region.
           </h1>
           <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
-            Die FBG Schlaubetal — eine Gemeinschaft privater Waldbesitzer mit
-            regionaler Verantwortung.
+            Anerkannte Forstbetriebsgemeinschaft im Landkreis Oder-Spree,
+            ansässig in Ragow-Merz.
           </p>
         </div>
       </section>
@@ -44,23 +44,21 @@ export default function UeberUnsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimateIn animation="fade-right">
               <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-                Die Forstbetriebsgemeinschaft Schlaubetal
+                Warum es die FBG Schlaubetal gibt
               </h2>
               <div className="mt-6 space-y-4 text-lg text-anthracite-light leading-relaxed">
                 <p>
-                  Die FBG Schlaubetal ist eine anerkannte Forstbetriebsgemeinschaft
-                  im Land Brandenburg. Als Zusammenschluss privater Waldbesitzer in
-                  der Region Schlaubetal und Oder-Spree bündeln wir Kräfte und
-                  Interessen — für eine nachhaltige und wirtschaftliche
-                  Waldbewirtschaftung.
+                  Im Schlaubetal und der weiteren Region Oder-Spree besitzen viele
+                  Menschen Wald — oft kleinere Flächen, oft geerbt, oft ohne
+                  forstliche Ausbildung. Einzeln ist es schwer, Holz zu guten
+                  Preisen zu verkaufen, den Überblick über Fördermöglichkeiten zu
+                  behalten oder Forstarbeiten wirtschaftlich zu organisieren.
                 </p>
                 <p>
-                  Eine Forstbetriebsgemeinschaft (FBG) ist ein freiwilliger
-                  Zusammenschluss von Waldbesitzern, der durch das
-                  Bundeswaldgesetz geregelt ist. Ziel ist es, die Bewirtschaftung
-                  kleinerer Privatwaldflächen zu bündeln und gemeinsam effizienter
-                  zu gestalten — von der Holzvermarktung über die Waldpflege bis
-                  hin zur Förderberatung.
+                  Die FBG Schlaubetal bündelt diese einzelnen Waldbesitzer zu einer
+                  Gemeinschaft. Als anerkannte Forstbetriebsgemeinschaft nach
+                  §16 Bundeswaldgesetz sind wir offiziell durch das Land
+                  Brandenburg anerkannt.
                 </p>
               </div>
             </AnimateIn>
@@ -80,7 +78,7 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Was ist eine FBG */}
+      {/* Was ist eine FBG allgemein */}
       <section className="py-20 lg:py-24 bg-sand">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <AnimateIn animation="fade-up" className="mx-auto max-w-3xl">
@@ -88,31 +86,24 @@ export default function UeberUnsPage() {
               Was ist eine Forstbetriebsgemeinschaft?
             </h2>
             <p className="mt-6 text-lg text-anthracite-light leading-relaxed text-center">
-              Viele Waldbesitzer in Deutschland besitzen kleine Flächen, die allein
-              schwer wirtschaftlich zu bewirtschaften sind. Eine FBG schafft
-              Abhilfe:
+              Eine FBG ist ein freiwilliger Zusammenschluss von Waldbesitzern,
+              geregelt durch das Bundeswaldgesetz. Die Idee ist einfach: Was
+              einzeln schwer geht, wird gemeinsam möglich.
             </p>
           </AnimateIn>
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Bündelung",
-                text: "Kleinere Waldparzellen werden gebündelt verwaltet — für bessere Verhandlungspositionen und effizientere Abläufe.",
+                title: "Flächen bündeln",
+                text: "Kleine Parzellen werden zusammengefasst — das macht Bewirtschaftung und Vermarktung erst wirtschaftlich.",
                 icon: (
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 ),
               },
               {
-                title: "Beratung",
-                text: "Mitglieder erhalten Zugang zu fachkundiger Beratung in allen Fragen der Waldbewirtschaftung.",
-                icon: (
-                  <path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-                ),
-              },
-              {
-                title: "Vermarktung",
-                text: "Gemeinsame Holzvermarktung sorgt für bessere Preise und professionelle Abwicklung.",
+                title: "Gemeinsam verkaufen",
+                text: "Größere Holzmengen bedeuten bessere Preise. Allein hat man am Markt kaum Verhandlungsgewicht.",
                 icon: (
                   <>
                     <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
@@ -120,8 +111,15 @@ export default function UeberUnsPage() {
                 ),
               },
               {
-                title: "Nachhaltigkeit",
-                text: "FBGs fördern eine nachhaltige Waldwirtschaft, die ökologische und ökonomische Ziele vereint.",
+                title: "Wissen teilen",
+                text: "Nicht jeder Waldbesitzer ist vom Fach. In der Gemeinschaft gibt es Erfahrung, Beratung und Austausch.",
+                icon: (
+                  <path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+                ),
+              },
+              {
+                title: "Interessen vertreten",
+                text: "Gegenüber Behörden, Forstämtern und am Markt hat eine organisierte Gemeinschaft mehr Gewicht als ein Einzelner.",
                 icon: (
                   <path d="M17 20H7l5-16 5 16zM12 20v-4M9 12h6" />
                 ),
@@ -129,7 +127,7 @@ export default function UeberUnsPage() {
             ].map((item, i) => (
               <AnimateIn key={item.title} animation="fade-up" delay={i * 120}>
               <div className="text-center">
-                <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-forest/10 text-forest mb-5 transition-transform duration-300 hover:scale-110">
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-forest/10 text-forest mb-5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -175,21 +173,22 @@ export default function UeberUnsPage() {
                 Unsere Region
               </p>
               <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-                Das Schlaubetal — Brandenburgs grünes Herz
+                Wald im Landkreis Oder-Spree
               </h2>
               <div className="mt-6 space-y-4 text-lg text-anthracite-light leading-relaxed">
                 <p>
-                  Das Schlaubetal im Landkreis Oder-Spree gehört zu den
-                  waldreichsten und landschaftlich reizvollsten Gebieten
-                  Brandenburgs. Durchzogen von der Schlaube und eingebettet in eine
-                  vielfältige Wald- und Seenlandschaft, ist die Region Heimat
-                  zahlreicher privater Waldbesitzer.
+                  Das Schlaubetal liegt im östlichen Brandenburg, im Landkreis
+                  Oder-Spree. Die Landschaft ist geprägt von Kiefernbeständen,
+                  Mischwald, sandigen Böden und einer Seenlandschaft entlang der
+                  Schlaube. Waldbesitz ist hier häufig kleinteilig — viele
+                  Eigentümer, oft verstreute Flächen.
                 </p>
                 <p>
-                  Die FBG Schlaubetal kennt die lokalen Standortbedingungen, die
-                  Böden, das Klima und die forstlichen Herausforderungen der
-                  Region. Diese Ortskenntnis ist die Grundlage für eine
-                  Beratung, die wirklich passt.
+                  Die FBG Schlaubetal hat ihren Sitz in Ragow-Merz und ist in
+                  dieser Region verwurzelt. Wir kennen die Böden, die
+                  Baumartenzusammensetzung und die Herausforderungen, die
+                  Trockenheit und Borkenkäfer in den letzten Jahren gebracht
+                  haben.
                 </p>
               </div>
             </div>
@@ -197,7 +196,7 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Vorstand — Platzhalter */}
+      {/* Ansprechpartner */}
       <section className="py-20 lg:py-24 bg-sand">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -205,16 +204,14 @@ export default function UeberUnsPage() {
               Ansprechpartner
             </p>
             <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-              Ihr Kontakt zur FBG
+              Wer hinter der FBG steht
             </h2>
             <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
-              Hinter der FBG Schlaubetal stehen Menschen, die sich für den Wald in
-              unserer Region einsetzen. Persönlich, kompetent und nah an unseren
-              Mitgliedern.
+              Die FBG Schlaubetal wird ehrenamtlich geführt. Die Ansprechpartner
+              und ihre Kontaktdaten werden hier nach Abstimmung ergänzt.
             </p>
           </div>
 
-          {/* Placeholder cards */}
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               { role: "Vorsitzende/r", note: "Name wird ergänzt" },
@@ -249,32 +246,27 @@ export default function UeberUnsPage() {
               </div>
             ))}
           </div>
-
-          <p className="mt-10 text-center text-sm text-anthracite-light/70 italic">
-            Die Angaben zu Ansprechpartnern werden nach Abstimmung mit der FBG
-            ergänzt.
-          </p>
         </div>
       </section>
 
-      {/* Zahlen & Fakten */}
+      {/* Fakten */}
       <section className="py-20 lg:py-24 bg-forest-dark text-white">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-center leading-tight mb-16">
-            Zahlen & Fakten
+            Auf einen Blick
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               { value: "—", label: "Mitglieder", note: "wird ergänzt" },
               { value: "—", label: "Hektar Waldfläche", note: "wird ergänzt" },
               {
-                value: "Brandenburg",
-                label: "Anerkannte FBG",
+                value: "§16 BWaldG",
+                label: "Anerkannt in Brandenburg",
                 note: "gesichert",
               },
               {
-                value: "Oder-Spree",
-                label: "Region",
+                value: "Ragow-Merz",
+                label: "Sitz im Landkreis Oder-Spree",
                 note: "gesichert",
               },
             ].map((stat) => (
@@ -296,17 +288,18 @@ export default function UeberUnsPage() {
       <section className="py-20 lg:py-24 bg-warmwhite">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-            Lernen Sie uns kennen.
+            Sie möchten mehr erfahren?
           </h2>
           <p className="mt-4 text-lg text-anthracite-light">
-            Haben Sie Fragen zur FBG Schlaubetal? Wir freuen uns auf den Austausch.
+            Schreiben Sie uns — wir erklären Ihnen gerne, wie die FBG
+            funktioniert und ob eine Mitgliedschaft für Sie sinnvoll ist.
           </p>
           <div className="mt-8">
             <Link
               href="/kontakt"
               className="inline-flex items-center justify-center rounded-lg bg-forest px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-forest-light shadow-sm"
             >
-              Kontakt aufnehmen
+              Nachricht schreiben
             </Link>
           </div>
         </div>

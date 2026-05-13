@@ -13,17 +13,17 @@ function HeroSection() {
         <div className="max-w-2xl">
           <AnimateIn animation="fade-in" duration={1200}>
             <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-4">
-              Forstbetriebsgemeinschaft
+              Forstbetriebsgemeinschaft im Schlaubetal
             </p>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Gemeinsam für{" "}
-              <span className="text-forest-light">unseren Wald.</span>
+              Wir vertreten{" "}
+              <span className="text-forest-light">Waldbesitzer in der Region.</span>
             </h1>
           </AnimateIn>
           <AnimateIn animation="fade-up" delay={400} duration={1100}>
             <p className="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl">
-              Die Forstbetriebsgemeinschaft für private Waldbesitzer im Schlaubetal
-              und der Region Oder-Spree.
+              Die FBG Schlaubetal bündelt die Interessen privater Waldbesitzer
+              im Landkreis Oder-Spree — anerkannt durch das Land Brandenburg.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
@@ -43,7 +43,7 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom wave — translate-y-px eliminates subpixel gap */}
+      {/* Bottom wave */}
       <div className="absolute -bottom-px left-0 right-0">
         <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-auto" preserveAspectRatio="none">
           <path
@@ -62,14 +62,13 @@ function IntroSection() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-            Ihr Partner für nachhaltige Waldwirtschaft
+            Wer allein Wald besitzt, steht oft allein vor großen Fragen.
           </h2>
           <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
-            Die FBG Schlaubetal ist der Zusammenschluss privater Waldbesitzer in der
-            Region Schlaubetal. Als anerkannte Forstbetriebsgemeinschaft in
-            Brandenburg vertreten wir die Interessen unserer Mitglieder — und
-            unterstützen sie dabei, ihren Wald fachgerecht und wirtschaftlich zu
-            bewirtschaften.
+            Wann lohnt sich eine Durchforstung? Wer kauft mein Holz zu fairen
+            Preisen? Welche Fördermittel stehen mir zu? Als Forstbetriebsgemeinschaft
+            geben wir privaten Waldbesitzern in der Region eine gemeinsame Stimme —
+            und ganz praktische Unterstützung.
           </p>
         </AnimateIn>
       </div>
@@ -77,11 +76,16 @@ function IntroSection() {
   );
 }
 
+{/*
+  REDAKTIONSHINWEIS: Die folgenden drei Leistungsbereiche basieren auf
+  typischen FBG-Aufgaben nach §16 BWaldG. Die konkreten Formulierungen
+  müssen vor Go-Live mit der FBG Schlaubetal abgestimmt werden.
+*/}
 const services = [
   {
-    title: "Holzvermarktung",
+    title: "Holz gemeinsam vermarkten",
     description:
-      "Gemeinsam stärker am Markt: Durch gebündelte Holzvermarktung erzielen unsere Mitglieder bessere Konditionen und profitieren von professioneller Abwicklung.",
+      "Einzelne Waldbesitzer haben am Holzmarkt wenig Verhandlungsgewicht. Als Gemeinschaft bündeln wir Mengen und schaffen so Zugang zu Abnehmern, die für Einzelne kaum erreichbar wären.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <path d="M12 3v18" />
@@ -92,9 +96,9 @@ const services = [
     ),
   },
   {
-    title: "Beratung & Betreuung",
+    title: "Beratung vor Ort",
     description:
-      "Fachkundige Unterstützung bei allen Fragen rund um Ihren Wald — von der Bestandsbeurteilung über Förderungen bis zur langfristigen Bewirtschaftungsplanung.",
+      "Viele Waldbesitzer haben ihren Wald geerbt und wissen nicht genau, was zu tun ist. Wir helfen bei der Einschätzung des Bestandes, bei Fragen zu Fördermitteln und bei der Planung konkreter Maßnahmen.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
@@ -103,9 +107,9 @@ const services = [
     ),
   },
   {
-    title: "Waldbewirtschaftung",
+    title: "Wald pflegen und bewirtschaften",
     description:
-      "Organisation und Koordination von Forstarbeiten: Durchforstung, Waldpflege und Wiederaufforstung — professionell und auf Ihre Flächen abgestimmt.",
+      "Ob Durchforstung, Wiederbepflanzung oder Schadholzaufarbeitung — wir koordinieren forstliche Maßnahmen, damit auch kleinere Flächen fachgerecht betreut werden können.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <path d="M17 20H7l5-16 5 16z" />
@@ -122,14 +126,11 @@ function ServicesSection() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="text-center mb-16">
           <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
-            Unsere Leistungen
+            Wofür eine FBG da ist
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-            Was wir für Sie tun
+            Was Waldbesitzer von uns erwarten können
           </h2>
-          <p className="mt-4 text-base text-anthracite-light italic">
-            Leistungsübersicht — Details werden mit der FBG abgestimmt
-          </p>
         </AnimateIn>
 
         <AnimateIn animation="fade-up" delay={150}>
@@ -158,7 +159,7 @@ function ServicesSection() {
             href="/leistungen"
             className="group inline-flex items-center gap-2 text-forest font-semibold transition-colors hover:text-forest-light"
           >
-            Alle Leistungen ansehen
+            Mehr zu unseren Leistungen
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1">
               <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
             </svg>
@@ -180,20 +181,23 @@ function ForWaldbesitzerSection() {
                 Für Waldbesitzer
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-                Sie besitzen Wald im Schlaubetal?
+                Sie haben Wald im Schlaubetal — aber wenig Zeit oder Erfahrung?
               </h2>
               <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
-                Als Mitglied der FBG Schlaubetal profitieren Sie von gemeinschaftlicher
-                Waldbewirtschaftung, besseren Vermarktungsmöglichkeiten und fachlicher
-                Beratung. Ob Sie Ihren Wald aktiv bewirtschaften oder Unterstützung
-                bei der Pflege suchen — wir sind Ihr Ansprechpartner in der Region.
+                Das geht vielen Waldbesitzern in der Region so. Vielleicht haben
+                Sie eine Fläche geerbt. Vielleicht sind Sie unsicher, was jetzt
+                ansteht. Oder Sie wissen genau, was zu tun wäre — aber allein
+                fehlt die Verhandlungsposition oder der Zugang zu Dienstleistern.
+              </p>
+              <p className="mt-4 text-lg text-anthracite-light leading-relaxed">
+                Dafür gibt es die FBG. Als Mitglied sind Sie nicht allein.
               </p>
               <ul className="mt-8 space-y-4">
                 {[
-                  "Gebündelte Vermarktung für bessere Holzpreise",
-                  "Fachliche Beratung und Betreuung vor Ort",
-                  "Zugang zu professionellen Forstdienstleistungen",
-                  "Unterstützung bei Fördermitteln und Anträgen",
+                  "Gemeinsam verhandeln statt einzeln verkaufen",
+                  "Ansprechpartner, die die Region kennen",
+                  "Hilfe bei Förderanträgen und Behördengängen",
+                  "Auch für kleine Waldflächen sinnvoll",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <svg
@@ -250,13 +254,14 @@ function RegionSection() {
             Unsere Region
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-            Verwurzelt im Schlaubetal.
+            Zwischen Schlaube und Oder-Spree.
           </h2>
           <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
-            Die FBG Schlaubetal ist in der Region Oder-Spree zu Hause. Wir kennen
-            die Standortbedingungen, die Herausforderungen und die Chancen der
-            hiesigen Waldwirtschaft. Als Gemeinschaft setzen wir uns für die
-            nachhaltige Bewirtschaftung und den Erhalt unserer Wälder ein.
+            Das Schlaubetal gehört zu den waldreichsten Gebieten Brandenburgs.
+            Kiefernwälder, Mischwaldbestände, sandige Böden und ein Klima, das
+            sich verändert — wer hier Wald besitzt, steht vor eigenen
+            Herausforderungen. Die FBG Schlaubetal ist in Ragow-Merz ansässig
+            und kennt die Bedingungen vor Ort.
           </p>
         </AnimateIn>
 
@@ -265,15 +270,15 @@ function RegionSection() {
             {[
               {
                 label: "Anerkannte FBG",
-                detail: "Offiziell anerkannt durch das Land Brandenburg",
+                detail: "Durch das Land Brandenburg offiziell anerkannt nach §16 BWaldG",
               },
               {
-                label: "Region Oder-Spree",
-                detail: "Verwurzelt im Schlaubetal und Umgebung",
+                label: "Sitz in Ragow-Merz",
+                detail: "Siedlung 18, 15848 Ragow-Merz — Landkreis Oder-Spree",
               },
               {
-                label: "Gemeinschaft",
-                detail: "Zusammenschluss privater Waldbesitzer",
+                label: "Für Privatwaldbesitzer",
+                detail: "Zusammenschluss für gemeinschaftliche Waldbewirtschaftung",
               },
             ].map((item) => (
               <div key={item.label} className="text-center">
@@ -305,11 +310,12 @@ function CtaSection() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8 text-center">
         <AnimateIn animation="fade-up">
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-            Sprechen Sie uns an.
+            Fragen? Melden Sie sich bei uns.
           </h2>
           <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-            Haben Sie Fragen zur FBG Schlaubetal oder möchten Sie mehr über eine
-            Mitgliedschaft erfahren? Wir freuen uns auf Ihre Nachricht.
+            Ob Sie über eine Mitgliedschaft nachdenken, eine konkrete Frage zu
+            Ihrem Wald haben oder einfach wissen möchten, was die FBG für Sie
+            tun kann — schreiben Sie uns.
           </p>
 
           <div className="mt-8 space-y-2 text-white/60">
@@ -330,7 +336,7 @@ function CtaSection() {
               href="/kontakt"
               className="inline-flex items-center justify-center rounded-lg bg-forest-light px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-forest hover:shadow-xl hover:shadow-forest/30 hover:-translate-y-0.5 shadow-lg shadow-forest/20"
             >
-              Kontakt aufnehmen
+              Nachricht schreiben
             </Link>
           </div>
         </AnimateIn>

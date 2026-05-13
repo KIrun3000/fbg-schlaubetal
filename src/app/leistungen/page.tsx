@@ -7,64 +7,71 @@ import { AnimateIn } from "@/components/AnimateIn";
 export const metadata: Metadata = {
   title: "Leistungen — FBG Schlaubetal",
   description:
-    "Die FBG Schlaubetal unterstützt private Waldbesitzer bei Holzvermarktung, Waldbewirtschaftung, Beratung und Förderberatung.",
+    "Die FBG Schlaubetal bündelt Holzvermarktung, Beratung und Waldbewirtschaftung für private Waldbesitzer in der Region Oder-Spree.",
 };
+
+{/*
+  REDAKTIONSHINWEIS: Die konkreten Leistungen der FBG Schlaubetal müssen
+  vor Go-Live verifiziert werden. Die folgenden Beschreibungen basieren auf
+  typischen Aufgaben einer FBG nach §16 BWaldG und sind bewusst vorsichtig
+  formuliert.
+*/}
 
 const mainServices = [
   {
-    title: "Holzvermarktung",
+    title: "Holz gemeinsam vermarkten",
     description:
-      "Die gebündelte Vermarktung von Holz ist einer der zentralen Vorteile einer Forstbetriebsgemeinschaft. Durch die Zusammenfassung der Holzmengen unserer Mitglieder erreichen wir bessere Marktpositionen und können professionelle Vermarktungswege nutzen, die für Einzelwaldbesitzer schwer zugänglich wären.",
+      "Wer allein eine kleine Menge Holz verkaufen will, hat am Markt kaum Verhandlungsgewicht. In einer FBG werden die Mengen vieler Mitglieder gebündelt. Das schafft Zugang zu Abnehmern und Preisen, die für einzelne Waldbesitzer schwer erreichbar wären.",
     benefits: [
-      "Gebündelte Holzmengen für bessere Verhandlungspositionen",
-      "Professionelle Abwicklung und Logistik",
-      "Zugang zu überregionalen Holzmärkten",
-      "Transparente Abrechnung für Mitglieder",
+      "Größere Mengen, bessere Verhandlungsposition",
+      "Zugang zu Holzkäufern über die Region hinaus",
+      "Abwicklung und Logistik werden koordiniert",
+      "Erlöse werden transparent abgerechnet",
     ],
     image: images.timber,
-    imageAlt: "Gestapeltes Holz — professionelle Holzvermarktung",
+    imageAlt: "Gestapeltes Holz — gebündelte Vermarktung",
   },
   {
-    title: "Beratung & Betreuung",
+    title: "Beratung für Waldbesitzer",
     description:
-      "Fundierte Beratung ist die Grundlage für gute Entscheidungen im Wald. Die FBG Schlaubetal unterstützt ihre Mitglieder bei allen Fragen rund um die Waldbewirtschaftung — von der Einschätzung des Bestandes über die Planung von Maßnahmen bis hin zur Beantragung von Fördermitteln.",
+      "Viele Waldbesitzer stehen vor Fragen, die ohne forstliches Wissen schwer zu beantworten sind: Ist mein Bestand gesund? Wann ist der richtige Zeitpunkt für eine Durchforstung? Welche Förderprogramme gibt es? Die FBG hilft bei der Einschätzung und vermittelt fachliche Unterstützung.",
     benefits: [
-      "Individuelle Beratung zu Ihrem Waldbestand",
-      "Unterstützung bei Fördermitteln und Anträgen",
-      "Langfristige Bewirtschaftungsplanung",
-      "Einschätzung von Schäden und Handlungsbedarf",
+      "Einschätzung des Waldbestandes vor Ort",
+      "Orientierung bei Fördermöglichkeiten",
+      "Hilfe bei Anträgen und Behördenkontakt",
+      "Vermittlung von Fachleuten bei Bedarf",
     ],
     image: images.forestManagement,
-    imageAlt: "Mischwald — fachkundige Forstberatung",
+    imageAlt: "Mischwald — Beratung und Bestandseinschätzung",
   },
   {
-    title: "Waldbewirtschaftung",
+    title: "Forstliche Maßnahmen koordinieren",
     description:
-      "Von der Durchforstung über die Waldpflege bis zur Wiederaufforstung: Die FBG organisiert und koordiniert forstliche Maßnahmen für ihre Mitglieder. So können auch kleinere Flächen professionell und effizient bewirtschaftet werden.",
+      "Durchforstung, Pflanzung, Schadholzaufarbeitung — solche Maßnahmen erfordern Planung, Geräte und Fachkenntnis. Die FBG koordiniert forstliche Arbeiten für ihre Mitglieder und sorgt dafür, dass auch kleinere Flächen nicht vernachlässigt werden.",
     benefits: [
-      "Organisation von Durchforstung und Holzernte",
-      "Koordination von Waldpflege-Maßnahmen",
-      "Wiederaufforstung und Bestandesbegründung",
-      "Abstimmung mit Forstdienstleistern",
+      "Koordination von Durchforstung und Holzernte",
+      "Organisation von Pflanzungen und Waldpflege",
+      "Aufarbeitung von Sturm- und Käferschäden",
+      "Zusammenarbeit mit regionalen Forstdienstleistern",
     ],
     image: images.saplings,
-    imageAlt: "Junge Baumsetzlinge — Wiederaufforstung und Waldpflege",
+    imageAlt: "Junge Baumsetzlinge — Aufforstung und Waldpflege",
   },
 ];
 
 const additionalServices = [
   {
-    title: "Förderberatung",
+    title: "Fördermittel und Anträge",
     description:
-      "Unterstützung bei der Beantragung forstlicher Fördermittel — von der Antragstellung bis zur Abrechnung.",
+      "Für Waldbesitzer gibt es verschiedene Förderprogramme — aber die Antragsstellung ist oft aufwendig. Die FBG unterstützt bei der Orientierung und Beantragung.",
     icon: (
       <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
     ),
   },
   {
-    title: "Schulungen & Austausch",
+    title: "Erfahrungsaustausch",
     description:
-      "Weiterbildungsangebote und Erfahrungsaustausch unter Waldbesitzern — Wissen teilen, voneinander lernen.",
+      "In einer FBG trifft man andere Waldbesitzer aus der Nachbarschaft. Der Austausch untereinander ist oft genauso wertvoll wie die formale Beratung.",
     icon: (
       <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
     ),
@@ -72,7 +79,7 @@ const additionalServices = [
   {
     title: "Interessenvertretung",
     description:
-      "Als Gemeinschaft vertreten wir die Interessen privater Waldbesitzer gegenüber Politik, Verwaltung und Markt.",
+      "Einzelne Waldbesitzer werden von der Politik selten gehört. Als organisierte Gemeinschaft können wir Interessen gegenüber Verwaltung und Markt wirksamer vertreten.",
     icon: (
       <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
     ),
@@ -80,7 +87,7 @@ const additionalServices = [
   {
     title: "Zertifizierung",
     description:
-      "Unterstützung bei der Gruppenzertifizierung (z.B. PEFC) — nachhaltige Waldwirtschaft dokumentiert und anerkannt.",
+      "Gruppenzertifizierungen wie PEFC dokumentieren nachhaltige Waldwirtschaft. Über die FBG ist eine solche Zertifizierung auch für kleine Flächen möglich.",
     icon: (
       <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     ),
@@ -106,11 +113,11 @@ export default function LeistungenPage() {
             Leistungen
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
-            Was wir für Sie tun
+            Was eine FBG für Waldbesitzer tut
           </h1>
           <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
-            Professionelle Unterstützung für private Waldbesitzer — von der
-            Holzvermarktung bis zur Förderberatung.
+            Holz vermarkten, Maßnahmen organisieren, bei Anträgen helfen —
+            die Kernaufgaben einer Forstbetriebsgemeinschaft.
           </p>
         </div>
       </section>
@@ -118,10 +125,10 @@ export default function LeistungenPage() {
       {/* Hinweis */}
       <section className="bg-earth/10 border-b border-earth/20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 py-4">
-          <p className="text-sm text-earth text-center italic">
-            Die folgenden Leistungsbeschreibungen basieren auf typischen
-            FBG-Angeboten und werden nach Abstimmung mit der FBG Schlaubetal
-            finalisiert.
+          <p className="text-sm text-earth text-center">
+            Die folgenden Leistungen beschreiben typische Aufgaben einer FBG.
+            Das genaue Angebot der FBG Schlaubetal wird nach Rücksprache hier
+            ergänzt.
           </p>
         </div>
       </section>
@@ -185,11 +192,11 @@ export default function LeistungenPage() {
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
-              Weitere Leistungen
+              Darüber hinaus
             </h2>
             <p className="mt-4 text-lg text-anthracite-light">
-              Über die Kernleistungen hinaus unterstützt die FBG ihre Mitglieder
-              in weiteren Bereichen.
+              Neben den Kernaufgaben kann eine FBG ihre Mitglieder auch in
+              weiteren Bereichen unterstützen.
             </p>
           </div>
 
@@ -233,24 +240,25 @@ export default function LeistungenPage() {
       <section className="py-20 lg:py-24 bg-forest-dark text-center">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-white leading-tight">
-            Interesse an einer Mitgliedschaft?
+            Klingt das für Sie relevant?
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Als Mitglied der FBG Schlaubetal profitieren Sie von allen genannten
-            Leistungen. Sprechen Sie uns an.
+            Wenn Sie Wald in der Region besitzen und Unterstützung suchen,
+            sprechen Sie uns an. Wir erklären Ihnen, was die FBG konkret
+            für Sie tun kann.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/mitgliedschaft"
               className="inline-flex items-center justify-center rounded-lg bg-forest-light px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-forest"
             >
-              Mitglied werden
+              Zur Mitgliedschaft
             </Link>
             <Link
               href="/kontakt"
               className="inline-flex items-center justify-center rounded-lg border border-white/20 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
             >
-              Kontakt aufnehmen
+              Nachricht schreiben
             </Link>
           </div>
         </div>
