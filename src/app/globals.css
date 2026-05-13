@@ -1,26 +1,42 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-forest: #2D5016;
+  --color-forest-light: #4A7C2E;
+  --color-forest-dark: #1E3A0E;
+  --color-sand: #F5F0E8;
+  --color-sand-dark: #F0EBE0;
+  --color-earth: #8B6914;
+  --color-earth-light: #A67D1A;
+  --color-warmwhite: #FAFAF7;
+  --color-anthracite: #2C2C2C;
+  --color-anthracite-light: #555555;
+  --font-serif: "Merriweather", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-warmwhite);
+  color: var(--color-anthracite);
+  font-family: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Video fade-in duration */
+.duration-1500 {
+  transition-duration: 1500ms;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
