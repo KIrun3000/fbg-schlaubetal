@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
+import { ServiceImageSlider } from "@/components/ServiceImageSlider";
+import { images, serviceSlides, type ImageSlide } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Leistungen — FBG Schlaubetal",
@@ -17,7 +18,14 @@ export const metadata: Metadata = {
   formuliert.
 */}
 
-const mainServices = [
+const mainServices: {
+  title: string;
+  description: string;
+  benefits: string[];
+  slides?: readonly ImageSlide[];
+  image?: string;
+  imageAlt?: string;
+}[] = [
   {
     title: "Holz gemeinsam vermarkten",
     description:
@@ -28,8 +36,7 @@ const mainServices = [
       "Abwicklung und Logistik werden koordiniert",
       "Erlöse werden transparent abgerechnet",
     ],
-    image: images.timber,
-    imageAlt: "Gestapeltes Holz — gebündelte Vermarktung",
+    slides: serviceSlides.timberMarketing,
   },
   {
     title: "Beratung für Waldbesitzer",
@@ -42,7 +49,7 @@ const mainServices = [
       "Vermittlung von Fachleuten bei Bedarf",
     ],
     image: images.forestManagement,
-    imageAlt: "Mischwald — Beratung und Bestandseinschätzung",
+    imageAlt: "Kiefernwald mit langen Schatten — Beratung und Bestandseinschätzung",
   },
   {
     title: "Forstliche Maßnahmen koordinieren",
@@ -54,8 +61,42 @@ const mainServices = [
       "Aufarbeitung von Sturm- und Käferschäden",
       "Zusammenarbeit mit regionalen Forstdienstleistern",
     ],
-    image: images.saplings,
-    imageAlt: "Junge Baumsetzlinge — Aufforstung und Waldpflege",
+    slides: serviceSlides.forestryMeasures,
+  },
+];
+
+const advisoryServices = [
+  {
+    title: "Waldumbau",
+    description:
+      "Beratung und Hilfe bei Anträgen für klimaresilienten Waldumbau — von der Bestandseinschätzung bis zur behördlichen Abstimmung.",
+    icon: (
+      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+    ),
+  },
+  {
+    title: "Waldbewirtschaftung und Pflege",
+    description:
+      "Unterstützung bei Bewirtschaftungsplänen, Pflegemaßnahmen und der Koordination forstlicher Arbeiten für Mitglieder.",
+    icon: (
+      <path d="M17 20H7l5-16 5 16z" />
+    ),
+  },
+  {
+    title: "Verkehrssicherheit",
+    description:
+      "Beratung bei behördlichen Auflagen und Hilfe bei Maßnahmen zur Verkehrssicherung entlang von Wegen und Straßen.",
+    icon: (
+      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+    ),
+  },
+  {
+    title: "Holzernte und Vermarktung",
+    description:
+      "Koordination von Holzernte und gebündelter Vermarktung — damit auch kleinere Mengen wirtschaftlich abgesetzt werden können.",
+    icon: (
+      <path d="M12 3v18M8 7l4-4 4 4M4 14h16M4 18h16" />
+    ),
   },
 ];
 
@@ -102,7 +143,7 @@ export default function LeistungenPage() {
         <div className="absolute inset-0">
           <Image
             src={images.forestManagement}
-            alt="Wald"
+            alt="Kiefernwald mit langen Schatten im Schlaubetal"
             fill
             className="object-cover opacity-25"
             priority
@@ -143,13 +184,19 @@ export default function LeistungenPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <AnimateIn animation={index % 2 === 0 ? "fade-right" : "fade-left"} className={index % 2 === 1 ? "order-2 lg:order-1" : ""}>
                 <div className="relative group">
-                  <Image
-                    src={service.image}
-                    alt={service.imageAlt}
-                    width={600}
-                    height={400}
-                    className="rounded-2xl object-cover w-full aspect-[3/2] transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
+                  {service.slides ? (
+                    <div className="transition-transform duration-700 group-hover:scale-[1.02]">
+                      <ServiceImageSlider slides={service.slides} />
+                    </div>
+                  ) : (
+                    <Image
+                      src={service.image!}
+                      alt={service.imageAlt!}
+                      width={600}
+                      height={400}
+                      className="rounded-2xl object-cover w-full aspect-[3/2] transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  )}
                   <div
                     className={`absolute -bottom-4 ${index % 2 === 0 ? "-right-4" : "-left-4"} h-20 w-20 rounded-2xl bg-forest/10 -z-10 transition-transform duration-500 group-hover:translate-y-1`}
                   />
@@ -186,6 +233,59 @@ export default function LeistungenPage() {
           </div>
         </section>
       ))}
+
+      {/* Beratung bei behördlichen Auflagen */}
+      <section className="py-20 lg:py-24 bg-warmwhite">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
+              Beratung & Anträge
+            </p>
+            <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
+              Beratung bei behördlichen Auflagen
+            </h2>
+            <p className="mt-4 text-lg text-anthracite-light max-w-3xl mx-auto">
+              Die FBG unterstützt Waldbesitzer bei behördlichen Auflagen und
+              hilft bei Anträgen für folgende Maßnahmen — Inhalte werden vor
+              Go-Live mit der FBG abgestimmt.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {advisoryServices.map((service) => (
+              <div
+                key={service.title}
+                className="bg-sand rounded-2xl p-8 border border-sand-dark/50"
+              >
+                <div className="flex items-start gap-5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest shrink-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6"
+                    >
+                      {service.icon}
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg font-bold text-anthracite">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 text-base text-anthracite-light leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Additional Services */}
       <section className="py-20 lg:py-24 bg-sand">

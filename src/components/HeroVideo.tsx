@@ -39,9 +39,9 @@ export function HeroVideo() {
       {isMobile ? (
         <Image
           src={images.hero}
-          alt="Mischwald"
+          alt="Sonnenlicht in einem moosigen Kiefernwald im Schlaubetal"
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-55"
           priority
         />
       ) : (
@@ -52,15 +52,15 @@ export function HeroVideo() {
           loop
           playsInline
           preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1500 ${loaded ? "opacity-50" : "opacity-0"}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1500 ${loaded ? "opacity-65" : "opacity-0"}`}
         >
           <source src={VIDEO_URL} type="video/mp4" />
         </video>
       )}
 
-      {/* Dark neutral overlay for text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1f16]/80 via-[#1a1f16]/50 to-[#1a1f16]/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f16]/60 via-transparent to-[#1a1f16]/20" />
+      {/* Overlay for text contrast — kept lighter so the forest stays visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1f16]/55 via-[#1a1f16]/30 to-[#1a1f16]/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f16]/40 via-transparent to-[#1a1f16]/10" />
     </div>
   );
 }

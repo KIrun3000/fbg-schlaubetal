@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Impressum — FBG Schlaubetal",
@@ -18,9 +19,11 @@ export default function ImpressumPage() {
               Angaben gemäß § 5 TMG
             </h2>
             <p>
-              FBG Schlaubetal<br />
-              Siedlung 18<br />
-              15848 Ragow-Merz
+              {site.name}
+              <br />
+              {site.address.street}
+              <br />
+              {site.address.zip} {site.address.city}
             </p>
           </div>
 
@@ -40,10 +43,10 @@ export default function ImpressumPage() {
             <p>
               E-Mail:{" "}
               <a
-                href="mailto:info@waldforum.de"
+                href={`mailto:${site.email}`}
                 className="text-forest hover:text-forest-light transition-colors"
               >
-                info@waldforum.de
+                {site.email}
               </a>
               <br />
               <span className="italic text-anthracite-light/70">

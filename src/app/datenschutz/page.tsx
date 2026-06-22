@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung — FBG Schlaubetal",
@@ -33,15 +34,18 @@ export default function DatenschutzPage() {
               2. Verantwortliche Stelle
             </h2>
             <p>
-              FBG Schlaubetal<br />
-              Siedlung 18<br />
-              15848 Ragow-Merz<br />
+              {site.name}
+              <br />
+              {site.address.street}
+              <br />
+              {site.address.zip} {site.address.city}
+              <br />
               E-Mail:{" "}
               <a
-                href="mailto:info@waldforum.de"
+                href={`mailto:${site.email}`}
                 className="text-forest hover:text-forest-light transition-colors"
               >
-                info@waldforum.de
+                {site.email}
               </a>
             </p>
             <p className="italic text-anthracite-light/70">
@@ -149,14 +153,16 @@ export default function DatenschutzPage() {
               7. Bildmaterial
             </h2>
             <p>
-              Einige Bilder auf dieser Website werden von Unsplash
-              (unsplash.com) geladen. Beim Abruf dieser Bilder kann eine
-              Verbindung zu den Servern von Unsplash hergestellt werden, wobei
-              Ihre IP-Adresse übermittelt wird.
+              Die Waldmotive auf dieser Website werden lokal von unserem eigenen
+              Server ausgeliefert; dabei werden keine Daten an Dritte übermittelt.
+              Einzelne weitere Bilder (etwa zu Holz, Aufforstung und
+              Luftaufnahmen) werden noch von Unsplash (unsplash.com) geladen.
+              Beim Abruf dieser Bilder kann eine Verbindung zu den Servern von
+              Unsplash hergestellt werden, wobei Ihre IP-Adresse übermittelt wird.
             </p>
             <p className="italic text-anthracite-light/70">
-              Hinweis: Sobald eigene Bilder vorliegen, werden die externen
-              Bildquellen durch lokale Dateien ersetzt.
+              Hinweis: Die verbliebenen externen Bildquellen werden ersetzt,
+              sobald passende eigene Bilder vorliegen.
             </p>
           </div>
 

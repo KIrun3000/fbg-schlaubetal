@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
+import { getDownloadById } from "@/lib/downloads";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mitgliedschaft — FBG Schlaubetal",
@@ -43,6 +45,8 @@ const benefits = [
   },
 ];
 
+const membershipApplication = getDownloadById("antrag-mitgliedschaft");
+
 const steps = [
   {
     step: "1",
@@ -54,7 +58,7 @@ const steps = [
     step: "2",
     title: "Beitrittserklärung",
     description:
-      "Wenn Sie sich für eine Mitgliedschaft entscheiden, erhalten Sie von uns die Beitrittserklärung. Die genauen Konditionen besprechen wir vorher.",
+      "Wenn Sie sich für eine Mitgliedschaft entscheiden, laden Sie die Beitrittserklärung herunter oder erhalten Sie diese von uns. Die genauen Konditionen besprechen wir vorher.",
   },
   {
     step: "3",
@@ -174,7 +178,7 @@ export default function MitgliedschaftPage() {
             <div className="relative">
               <Image
                 src={images.forestFloor}
-                alt="Waldboden — Natur in der Region"
+                alt="Herbstlicher Kiefernwald mit Farnen am Waldboden"
                 width={600}
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
@@ -217,6 +221,33 @@ export default function MitgliedschaftPage() {
               </AnimateIn>
             ))}
           </div>
+
+          {membershipApplication && (
+            <div className="mt-12 max-w-2xl mx-auto rounded-2xl border border-sand-dark/50 bg-sand/40 p-6 text-center">
+              <h3 className="font-serif text-xl font-bold text-anthracite mb-2">
+                Beitrittserklärung herunterladen
+              </h3>
+              <p className="text-sm text-anthracite-light mb-4">
+                Platzhalterversion — wird durch das offizielle Formular der FBG
+                ersetzt.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                  href={membershipApplication.file}
+                  download={membershipApplication.filename}
+                  className="inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
+                >
+                  Antrag auf Mitgliedschaft (PDF)
+                </a>
+                <Link
+                  href="/downloads"
+                  className="inline-flex items-center justify-center rounded-lg border border-forest px-5 py-3 text-sm font-semibold text-forest transition-colors hover:bg-forest hover:text-white"
+                >
+                  Alle Dokumente
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -239,10 +270,10 @@ export default function MitgliedschaftPage() {
               Nachricht schreiben
             </Link>
             <a
-              href="mailto:info@waldforum.de"
+              href={`mailto:${site.email}`}
               className="inline-flex items-center justify-center rounded-lg border border-white/20 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/10"
             >
-              info@waldforum.de
+              {site.email}
             </a>
           </div>
         </div>

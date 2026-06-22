@@ -2,14 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-
-const navigation = [
-  { name: "Startseite", href: "/" },
-  { name: "Über uns", href: "/ueber-uns" },
-  { name: "Leistungen", href: "/leistungen" },
-  { name: "Mitgliedschaft", href: "/mitgliedschaft" },
-  { name: "Kontakt", href: "/kontakt" },
-];
+import { navigation, site } from "@/lib/site";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,10 +38,10 @@ export function Header() {
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-lg font-bold text-forest leading-tight">
-                FBG Schlaubetal
+                {site.name}
               </span>
               <span className="text-xs text-anthracite-light leading-tight hidden sm:block">
-                Forstbetriebsgemeinschaft
+                {site.tagline}
               </span>
             </div>
           </Link>

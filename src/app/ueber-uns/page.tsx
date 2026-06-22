@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Über uns — FBG Schlaubetal",
@@ -18,7 +19,7 @@ export default function UeberUnsPage() {
         <div className="absolute inset-0">
           <Image
             src={images.forestPath}
-            alt="Waldweg im Mischwald"
+            alt="Waldweg zwischen Kiefernwald und Feld im Schlaubetal"
             fill
             className="object-cover opacity-30"
             priority
@@ -66,7 +67,7 @@ export default function UeberUnsPage() {
               <div className="relative group">
                 <Image
                   src={images.sunlightForest}
-                  alt="Sonnenlicht fällt durch die Baumkronen eines Mischwaldes"
+                  alt="Sonnenlicht fällt durch die Kronen eines moosigen Kiefernwaldes"
                   width={600}
                   height={450}
                   className="rounded-2xl object-cover w-full aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.02]"
@@ -75,6 +76,25 @@ export default function UeberUnsPage() {
               </div>
             </AnimateIn>
           </div>
+        </div>
+      </section>
+
+      {/* Zusammenarbeit mit Waldform */}
+      <section className="py-20 lg:py-24 bg-sand">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <AnimateIn animation="fade-up">
+            <div className="max-w-3xl mx-auto rounded-2xl border border-sand-dark/50 bg-warmwhite p-8 lg:p-10">
+              <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
+                Unser Standort
+              </p>
+              <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
+                FBG und Waldform unter einem Dach
+              </h2>
+              <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
+                {site.partner.description}
+              </p>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 

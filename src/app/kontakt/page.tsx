@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { images } from "@/lib/images";
+import { formatAddress, site } from "@/lib/site";
 
 export default function KontaktPage() {
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -23,7 +24,7 @@ export default function KontaktPage() {
         <div className="absolute inset-0">
           <Image
             src={images.forestPath}
-            alt="Waldweg in Brandenburg"
+            alt="Waldweg zwischen Kiefernwald und Feld im Schlaubetal"
             fill
             className="object-cover opacity-25"
             priority
@@ -256,9 +257,11 @@ export default function KontaktPage() {
                   <div>
                     <h3 className="font-medium text-anthracite">Adresse</h3>
                     <address className="mt-1 not-italic text-anthracite-light leading-relaxed">
-                      FBG Schlaubetal<br />
-                      Siedlung 18<br />
-                      15848 Ragow-Merz
+                      {site.name}
+                      <br />
+                      {site.address.street}
+                      <br />
+                      {site.address.zip} {site.address.city}
                     </address>
                   </div>
                 </div>
@@ -283,10 +286,10 @@ export default function KontaktPage() {
                   <div>
                     <h3 className="font-medium text-anthracite">E-Mail</h3>
                     <a
-                      href="mailto:info@waldforum.de"
+                      href={`mailto:${site.email}`}
                       className="mt-1 text-forest hover:text-forest-light transition-colors"
                     >
-                      info@waldforum.de
+                      {site.email}
                     </a>
                   </div>
                 </div>
@@ -330,7 +333,25 @@ export default function KontaktPage() {
                   />
                 </div>
                 <p className="mt-3 text-sm text-anthracite-light">
-                  Siedlung 18, 15848 Ragow-Merz · Region Oder-Spree
+                  {formatAddress()} · Region Oder-Spree
+                </p>
+              </div>
+
+              <div className="mt-8 rounded-2xl bg-sand border border-sand-dark/50 p-6">
+                <h3 className="font-serif text-lg font-bold text-anthracite mb-2">
+                  Ansprechpartner der FBG
+                </h3>
+                <p className="text-sm text-anthracite-light leading-relaxed">
+                  Ihre Anfrage richten Sie an die FBG Schlaubetal unter{" "}
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="text-forest hover:text-forest-light transition-colors"
+                  >
+                    {site.email}
+                  </a>
+                  . Die fachliche Umsetzung forstlicher Maßnahmen erfolgt in
+                  Zusammenarbeit mit {site.partner.name} — unserem Dienstleister
+                  im selben Haus.
                 </p>
               </div>
             </div>

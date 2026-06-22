@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { footerNavigation, formatAddress, site } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -25,7 +26,7 @@ export function Footer() {
                 </svg>
               </div>
               <span className="font-serif text-base font-bold text-white">
-                FBG Schlaubetal
+                {site.name}
               </span>
             </div>
             <p className="text-sm leading-relaxed text-white/60">
@@ -40,26 +41,16 @@ export function Footer() {
               Navigation
             </h3>
             <ul className="space-y-2.5">
-              <li>
-                <Link href="/ueber-uns" className="text-sm text-white/70 transition-colors hover:text-white">
-                  Über uns
-                </Link>
-              </li>
-              <li>
-                <Link href="/leistungen" className="text-sm text-white/70 transition-colors hover:text-white">
-                  Leistungen
-                </Link>
-              </li>
-              <li>
-                <Link href="/mitgliedschaft" className="text-sm text-white/70 transition-colors hover:text-white">
-                  Mitglied werden
-                </Link>
-              </li>
-              <li>
-                <Link href="/kontakt" className="text-sm text-white/70 transition-colors hover:text-white">
-                  Kontakt
-                </Link>
-              </li>
+              {footerNavigation.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-white/70 transition-colors hover:text-white"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -69,14 +60,16 @@ export function Footer() {
               Kontakt
             </h3>
             <address className="not-italic space-y-2.5 text-sm text-white/70">
-              <p>Siedlung 18</p>
-              <p>15848 Ragow-Merz</p>
+              <p>{site.address.street}</p>
+              <p>
+                {site.address.zip} {site.address.city}
+              </p>
               <p className="pt-1">
                 <a
-                  href="mailto:info@waldforum.de"
+                  href={`mailto:${site.email}`}
                   className="transition-colors hover:text-white"
                 >
-                  info@waldforum.de
+                  {site.email}
                 </a>
               </p>
             </address>
@@ -85,7 +78,9 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} FBG Schlaubetal. Alle Rechte vorbehalten.</p>
+          <p>
+            &copy; {new Date().getFullYear()} {site.name}. Alle Rechte vorbehalten.
+          </p>
           <div className="flex gap-6">
             <Link href="/impressum" className="transition-colors hover:text-white/70">
               Impressum

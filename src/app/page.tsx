@@ -3,6 +3,12 @@ import Link from "next/link";
 import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
 import { HeroVideo } from "@/components/HeroVideo";
+import {
+  formatAktuellesDate,
+  getCategoryLabel,
+  getLatestAktuelles,
+} from "@/lib/aktuelles";
+import { formatAddress, site } from "@/lib/site";
 
 function HeroSection() {
   return (
@@ -118,6 +124,18 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Verkehrssicherheit",
+    description:
+      "Entlang von Wegen und Straßen müssen Waldbesitzer für Verkehrssicherheit sorgen. Die FBG berät bei behördlichen Auflagen und koordiniert die nötigen Maßnahmen.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
+        <path d="M12 9v4" />
+        <path d="M12 17h.01" />
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+      </svg>
+    ),
+  },
 ];
 
 function ServicesSection() {
@@ -134,7 +152,7 @@ function ServicesSection() {
         </AnimateIn>
 
         <AnimateIn animation="fade-up" delay={150}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {services.map((service) => (
               <div
                 key={service.title}
@@ -231,7 +249,7 @@ function ForWaldbesitzerSection() {
             <div className="relative group">
               <Image
                 src={images.sunlightForest}
-                alt="Sonnenlicht fällt durch die Baumkronen eines Mischwaldes"
+                alt="Sonnenlicht fällt durch die Kronen eines moosigen Kiefernwaldes"
                 width={600}
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.02]"
@@ -304,6 +322,66 @@ function RegionSection() {
   );
 }
 
+function AktuellesSection() {
+  const latest = getLatestAktuelles(3);
+
+  return (
+    <section className="py-20 lg:py-24 bg-warmwhite">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <AnimateIn animation="fade-up" className="text-center mb-16">
+          <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
+            Aktuelles
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
+            Termine, Versammlungen und Themen aus der FBG
+          </h2>
+        </AnimateIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {latest.map((item, index) => (
+            <AnimateIn key={item.id} animation="fade-up" delay={index * 100}>
+              <article className="h-full rounded-2xl border border-sand-dark/50 bg-sand/40 p-8">
+                <p className="text-xs font-medium uppercase tracking-wider text-forest mb-2">
+                  {getCategoryLabel(item.category)}
+                </p>
+                <time
+                  dateTime={item.date}
+                  className="text-sm text-anthracite-light"
+                >
+                  {formatAktuellesDate(item.date)}
+                </time>
+                <h3 className="mt-3 font-serif text-xl font-bold text-anthracite">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-base text-anthracite-light leading-relaxed">
+                  {item.excerpt}
+                </p>
+                {item.isPlaceholder && (
+                  <p className="mt-4 text-xs italic text-earth">
+                    Beispieleintrag — wird durch die FBG ersetzt
+                  </p>
+                )}
+              </article>
+            </AnimateIn>
+          ))}
+        </div>
+
+        <AnimateIn animation="fade-in" delay={300} className="text-center mt-12">
+          <Link
+            href="/aktuelles"
+            className="group inline-flex items-center gap-2 text-forest font-semibold transition-colors hover:text-forest-light"
+          >
+            Alle Meldungen ansehen
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1">
+              <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+            </svg>
+          </Link>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
 function CtaSection() {
   return (
     <section className="py-20 lg:py-24 bg-forest-dark">
@@ -319,14 +397,14 @@ function CtaSection() {
           </p>
 
           <div className="mt-8 space-y-2 text-white/60">
-            <p className="font-medium text-white">FBG Schlaubetal</p>
-            <p>Siedlung 18, 15848 Ragow-Merz</p>
+            <p className="font-medium text-white">{site.name}</p>
+            <p>{formatAddress()}</p>
             <p>
               <a
-                href="mailto:info@waldforum.de"
+                href={`mailto:${site.email}`}
                 className="text-forest-light hover:text-white transition-colors duration-300"
               >
-                info@waldforum.de
+                {site.email}
               </a>
             </p>
           </div>
@@ -353,6 +431,7 @@ export default function Home() {
       <ServicesSection />
       <ForWaldbesitzerSection />
       <RegionSection />
+      <AktuellesSection />
       <CtaSection />
     </>
   );
