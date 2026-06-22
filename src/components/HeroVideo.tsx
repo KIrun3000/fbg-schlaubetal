@@ -58,9 +58,9 @@ export function HeroVideo() {
         </video>
       )}
 
-      {/* Overlay for text contrast — kept lighter so the forest stays visible */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1f16]/55 via-[#1a1f16]/30 to-[#1a1f16]/15" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f16]/40 via-transparent to-[#1a1f16]/10" />
+      {/* Overlay for text contrast — stronger on the left where copy sits */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1f16]/75 via-[#1a1f16]/35 to-[#1a1f16]/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f16]/55 via-[#1a1f16]/10 to-transparent" />
     </div>
   );
 }

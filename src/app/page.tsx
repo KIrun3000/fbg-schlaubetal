@@ -12,13 +12,13 @@ import { formatAddress, site } from "@/lib/site";
 
 function HeroSection() {
   return (
-    <section className="relative bg-[#1a1f16] overflow-hidden min-h-[70vh] sm:min-h-[85vh] flex items-center">
+    <section className="relative bg-[#1a1f16] overflow-hidden min-h-[85vh] sm:min-h-[92vh] flex items-end">
       <HeroVideo />
 
-      <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-24 sm:py-32 lg:py-40 w-full">
-        <div className="max-w-2xl">
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8 pt-20 pb-28 sm:pt-24 sm:pb-32 lg:pb-36 w-full">
+        <div className="max-w-2xl [text-shadow:0_1px_12px_rgba(26,31,22,0.45)]">
           <AnimateIn animation="fade-in" duration={1200}>
-            <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-4">
+            <p className="text-sm font-medium uppercase tracking-widest text-white/90 mb-4">
               Forstbetriebsgemeinschaft im Schlaubetal
             </p>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
@@ -27,7 +27,7 @@ function HeroSection() {
             </h1>
           </AnimateIn>
           <AnimateIn animation="fade-up" delay={400} duration={1100}>
-            <p className="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl">
+            <p className="mt-6 text-lg sm:text-xl text-white/85 leading-relaxed max-w-xl">
               Die FBG Schlaubetal bündelt die Interessen privater Waldbesitzer
               im Landkreis Oder-Spree — anerkannt durch das Land Brandenburg.
             </p>
