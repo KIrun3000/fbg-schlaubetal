@@ -30,8 +30,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-white/60">
-              Die Forstbetriebsgemeinschaft für private Waldbesitzer im
-              Schlaubetal und der Region Oder-Spree.
+              Die Forstbetriebsgemeinschaft für private Waldbesitzer in ganz
+              Brandenburg.
             </p>
           </div>
 
@@ -73,6 +73,32 @@ export function Footer() {
                 </a>
               </p>
             </address>
+
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/40 mt-8 mb-4">
+              Partner und Verbände
+            </h3>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              <li>
+                <a
+                  href={site.partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  Waldform GmbH
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.associations.waldbesitzerverband.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  {site.associations.waldbesitzerverband.name}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -81,7 +107,10 @@ export function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {site.name}. Alle Rechte vorbehalten.
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-6">
+            <Link href="/satzung" className="transition-colors hover:text-white/70">
+              Satzung
+            </Link>
             <Link href="/impressum" className="transition-colors hover:text-white/70">
               Impressum
             </Link>

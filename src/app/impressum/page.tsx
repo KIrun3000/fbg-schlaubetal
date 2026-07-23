@@ -31,8 +31,10 @@ export default function ImpressumPage() {
             <h2 className="font-serif text-xl font-bold text-anthracite">
               Vertreten durch
             </h2>
-            <p className="italic text-anthracite-light/70">
-              [Name des/der Vorsitzenden — wird nach Abstimmung ergänzt]
+            <p>
+              Max Freiherr Heereman von Zuydtwyck — Vorstandsvorsitzender
+              <br />
+              Richard Tschutschke — Stellvertretender Vorsitzender
             </p>
           </div>
 
@@ -72,8 +74,12 @@ export default function ImpressumPage() {
             <h2 className="font-serif text-xl font-bold text-anthracite">
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
-            <p className="italic text-anthracite-light/70">
-              [Name und Adresse — wird nach Abstimmung ergänzt]
+            <p>
+              Max Freiherr Heereman von Zuydtwyck
+              <br />
+              {site.address.street}
+              <br />
+              {site.address.zip} {site.address.city}
             </p>
           </div>
 

@@ -6,7 +6,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Aktuelles — FBG Schlaubetal",
   description:
-    "Termine, Versammlungen und aktuelle Themen der FBG Schlaubetal für Waldbesitzer in der Region Oder-Spree.",
+    "Termine, Versammlungen und aktuelle Themen der FBG Schlaubetal für Waldbesitzer in ganz Brandenburg.",
 };
 
 export default function AktuellesPage() {
@@ -32,7 +32,7 @@ export default function AktuellesPage() {
           <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
             Hier informiert die FBG Schlaubetal über Veranstaltungen,
             Mitgliederversammlungen und aktuelle Waldbewirtschaftungsthemen
-            in der Region.
+            in Brandenburg.
           </p>
         </div>
       </section>

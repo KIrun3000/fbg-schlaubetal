@@ -19,17 +19,19 @@ function HeroSection() {
         <div className="max-w-2xl [text-shadow:0_1px_12px_rgba(26,31,22,0.45)]">
           <AnimateIn animation="fade-in" duration={1200}>
             <p className="text-sm font-medium uppercase tracking-widest text-white/90 mb-4">
-              Forstbetriebsgemeinschaft im Schlaubetal
+              Forstbetriebsgemeinschaft in Brandenburg
             </p>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Wir vertreten{" "}
-              <span className="text-forest-light">Waldbesitzer in der Region.</span>
+              <span className="text-forest-light">
+                Waldbesitzer in ganz Brandenburg.
+              </span>
             </h1>
           </AnimateIn>
           <AnimateIn animation="fade-up" delay={400} duration={1100}>
             <p className="mt-6 text-lg sm:text-xl text-white/85 leading-relaxed max-w-xl">
               Die FBG Schlaubetal bündelt die Interessen privater Waldbesitzer
-              im Landkreis Oder-Spree — anerkannt durch das Land Brandenburg.
+              in ganz Brandenburg — anerkannt durch das Land Brandenburg.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
@@ -73,9 +75,63 @@ function IntroSection() {
           <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
             Wann lohnt sich eine Durchforstung? Wer kauft mein Holz zu fairen
             Preisen? Welche Fördermittel stehen mir zu? Als Forstbetriebsgemeinschaft
-            geben wir privaten Waldbesitzern in der Region eine gemeinsame Stimme —
-            und ganz praktische Unterstützung.
+            geben wir privaten Waldbesitzern in ganz Brandenburg eine gemeinsame
+            Stimme — und ganz praktische Unterstützung.
           </p>
+        </AnimateIn>
+      </div>
+    </section>
+  );
+}
+
+const WALDBRAND_URL =
+  "https://mleuv.brandenburg.de/mleuv/de/umwelt/forst/waldschutz/waldbrandgefahr-in-brandenburg/waldbrandgefahrenstufen/";
+
+function WaldbrandSection() {
+  return (
+    <section className="py-20 lg:py-24 bg-earth/10 border-y border-earth/20">
+      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <AnimateIn animation="fade-up" className="mx-auto max-w-3xl">
+          <p className="text-sm font-medium uppercase tracking-widest text-earth mb-3">
+            Aktuelles
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
+            Waldbrandgefahr steigt – Mitglieder profitieren von zusätzlichem
+            Schutz
+          </h2>
+          <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
+            Die Sommer werden trockener und das Risiko von Waldbränden nimmt zu.
+            Deshalb ist die Brandschutzversicherung ein besonderer Vorteil für
+            Mitglieder der FBG Schlaubetal. Wenn Sie Waldbesitzer sind und von
+            diesem sowie vielen weiteren Vorteilen profitieren möchten,
+            informieren Sie sich gerne über eine Mitgliedschaft.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href={WALDBRAND_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-forest-light hover:-translate-y-0.5 hover:shadow-lg shadow-sm"
+            >
+              Aktuelle Waldbrandgefahrenstufen in Brandenburg
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="h-4 w-4 shrink-0"
+                aria-hidden="true"
+              >
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+              </svg>
+            </a>
+            <Link
+              href="/mitgliedschaft"
+              className="inline-flex items-center justify-center rounded-lg border border-forest px-7 py-3.5 text-base font-semibold text-forest transition-all duration-300 hover:bg-forest hover:text-white"
+            >
+              Mehr zur Mitgliedschaft
+            </Link>
+          </div>
         </AnimateIn>
       </div>
     </section>
@@ -199,10 +255,10 @@ function ForWaldbesitzerSection() {
                 Für Waldbesitzer
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-                Sie haben Wald im Schlaubetal — aber wenig Zeit oder Erfahrung?
+                Sie haben Wald in Brandenburg — aber wenig Zeit oder Erfahrung?
               </h2>
               <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
-                Das geht vielen Waldbesitzern in der Region so. Vielleicht haben
+                Das geht vielen Waldbesitzern in Brandenburg so. Vielleicht haben
                 Sie eine Fläche geerbt. Vielleicht sind Sie unsicher, was jetzt
                 ansteht. Oder Sie wissen genau, was zu tun wäre — aber allein
                 fehlt die Verhandlungsposition oder der Zugang zu Dienstleistern.
@@ -213,7 +269,7 @@ function ForWaldbesitzerSection() {
               <ul className="mt-8 space-y-4">
                 {[
                   "Gemeinsam verhandeln statt einzeln verkaufen",
-                  "Ansprechpartner, die die Region kennen",
+                  "Ansprechpartner, die Brandenburgs Wälder kennen",
                   "Hilfe bei Förderanträgen und Behördengängen",
                   "Auch für kleine Waldflächen sinnvoll",
                 ].map((item) => (
@@ -269,17 +325,17 @@ function RegionSection() {
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
-            Unsere Region
+            Unser Gebiet
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
-            Zwischen Schlaube und Oder-Spree.
+            Zu Hause im Schlaubetal, offen für ganz Brandenburg.
           </h2>
           <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
-            Das Schlaubetal gehört zu den waldreichsten Gebieten Brandenburgs.
-            Kiefernwälder, Mischwaldbestände, sandige Böden und ein Klima, das
-            sich verändert — wer hier Wald besitzt, steht vor eigenen
-            Herausforderungen. Die FBG Schlaubetal ist in Ragow-Merz ansässig
-            und kennt die Bedingungen vor Ort.
+            Brandenburg gehört zu den waldreichsten Bundesländern. Kiefernwälder,
+            Mischwaldbestände, sandige Böden und ein Klima, das sich verändert —
+            wer hier Wald besitzt, steht vor eigenen Herausforderungen. Die FBG
+            Schlaubetal ist in Ragow-Merz ansässig und steht Waldbesitzern im
+            ganzen Land offen.
           </p>
         </AnimateIn>
 
@@ -296,7 +352,7 @@ function RegionSection() {
               },
               {
                 label: "Für Privatwaldbesitzer",
-                detail: "Zusammenschluss für gemeinschaftliche Waldbewirtschaftung",
+                detail: "Offen für Waldbesitzer aus ganz Brandenburg",
               },
             ].map((item) => (
               <div key={item.label} className="text-center">
@@ -428,6 +484,7 @@ export default function Home() {
     <>
       <HeroSection />
       <IntroSection />
+      <WaldbrandSection />
       <ServicesSection />
       <ForWaldbesitzerSection />
       <RegionSection />

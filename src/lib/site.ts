@@ -9,8 +9,15 @@ export const site = {
   },
   partner: {
     name: "Waldform",
+    url: "https://www.waldform.de",
     description:
-      "Die FBG Schlaubetal hat ihren Sitz im selben Haus wie Waldform — unseren Dienstleister für forstliche Arbeiten in der Region. Die FBG vertritt die Waldbesitzer; Waldform setzt die fachliche Umsetzung um.",
+      "Die FBG Schlaubetal hat ihren Sitz im selben Gebäude wie die Waldform GmbH, die als forstlicher Dienstleister in der Region tätig ist. Während die FBG die Interessen der Waldbesitzer vertritt, unterstützt Waldform deren praktische Umsetzung durch die Planung und Durchführung forstlicher Maßnahmen vor Ort.",
+  },
+  associations: {
+    waldbesitzerverband: {
+      name: "Waldbesitzerverband Brandenburg e.V.",
+      url: "https://waldbesitzerverband-brandenburg.de/",
+    },
   },
 } as const;
 

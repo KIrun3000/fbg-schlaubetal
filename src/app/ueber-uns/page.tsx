@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Über uns — FBG Schlaubetal",
   description:
-    "Die FBG Schlaubetal ist eine anerkannte Forstbetriebsgemeinschaft im Landkreis Oder-Spree. Wir bündeln die Interessen privater Waldbesitzer in der Region.",
+    "Die FBG Schlaubetal ist eine vom Land Brandenburg anerkannte Forstbetriebsgemeinschaft. Wir bündeln die Interessen privater Waldbesitzer in ganz Brandenburg.",
 };
 
 export default function UeberUnsPage() {
@@ -30,11 +30,11 @@ export default function UeberUnsPage() {
             Über die FBG
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
-            Eine Gemeinschaft für den Privatwald in der Region.
+            Eine Gemeinschaft für den Privatwald in Brandenburg.
           </h1>
           <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
-            Anerkannte Forstbetriebsgemeinschaft im Landkreis Oder-Spree,
-            ansässig in Ragow-Merz.
+            Anerkannte Forstbetriebsgemeinschaft mit Sitz in Ragow-Merz — offen
+            für Waldbesitzer aus ganz Brandenburg.
           </p>
         </div>
       </section>
@@ -49,8 +49,8 @@ export default function UeberUnsPage() {
               </h2>
               <div className="mt-6 space-y-4 text-lg text-anthracite-light leading-relaxed">
                 <p>
-                  Im Schlaubetal und der weiteren Region Oder-Spree besitzen viele
-                  Menschen Wald — oft kleinere Flächen, oft geerbt, oft ohne
+                  In Brandenburg besitzen viele Menschen Wald — oft
+                  kleinere Flächen, oft geerbt, oft ohne
                   forstliche Ausbildung. Einzeln ist es schwer, Holz zu guten
                   Preisen zu verkaufen, den Überblick über Fördermöglichkeiten zu
                   behalten oder Forstarbeiten wirtschaftlich zu organisieren.
@@ -93,6 +93,38 @@ export default function UeberUnsPage() {
               <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
                 {site.partner.description}
               </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6 border-t border-sand-dark/50 pt-8">
+                <a
+                  href={site.partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-opacity duration-300 hover:opacity-80"
+                >
+                  <Image
+                    src={images.waldformLogo}
+                    alt="Logo der Waldform GmbH — Forstbetrieb Mark Brandenburg"
+                    width={263}
+                    height={213}
+                    className="h-24 w-auto"
+                  />
+                  <span className="sr-only">
+                    Zur Website der Waldform GmbH (öffnet in neuem Tab)
+                  </span>
+                </a>
+                <p className="text-base text-anthracite-light leading-relaxed">
+                  Mehr über den Forstbetrieb erfahren Sie auf{" "}
+                  <a
+                    href={site.partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-forest font-medium hover:underline"
+                  >
+                    waldform.de
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
           </AnimateIn>
         </div>

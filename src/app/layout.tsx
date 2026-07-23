@@ -20,11 +20,11 @@ const merriweather = Merriweather({
 export const metadata: Metadata = {
   title: "FBG Schlaubetal — Forstbetriebsgemeinschaft für private Waldbesitzer",
   description:
-    "Die FBG Schlaubetal ist der Zusammenschluss privater Waldbesitzer in der Region Schlaubetal und Oder-Spree. Gemeinsam für unseren Wald.",
+    "Die FBG Schlaubetal ist der Zusammenschluss privater Waldbesitzer in ganz Brandenburg. Gemeinsam für unseren Wald.",
   openGraph: {
     title: "FBG Schlaubetal — Gemeinsam für unseren Wald",
     description:
-      "Forstbetriebsgemeinschaft für private Waldbesitzer im Schlaubetal und der Region Oder-Spree.",
+      "Forstbetriebsgemeinschaft für private Waldbesitzer in ganz Brandenburg.",
     locale: "de_DE",
     type: "website",
   },

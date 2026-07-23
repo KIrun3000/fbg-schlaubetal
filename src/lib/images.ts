@@ -1,6 +1,7 @@
 // Bildquellen gemischt:
 // - Regionale Kiefernwald-Motive: lokal in /public/images (Pixabay License)
-// - Leistungs-Slider: lokal, Pexels License (bulat843, zkadoshi, Radoslaw Krupa, Karola G)
+// - Hero + Stammholz: Fotos der FBG (lokal in /public/images)
+// - Leistungs-Slider Forstmaßnahmen: lokal, Pexels License
 // - Backup-Bilder: /public/images/backup/ (Pexels, für spätere Verwendung)
 // - Restliche Slots: Unsplash-Platzhalter, bis eigene Fotos vorliegen.
 
@@ -10,8 +11,8 @@ export type ImageSlide = {
 };
 
 export const images = {
-  // Hero (Mobile): Sonniger moosiger Kiefernwald
-  hero: "/images/sunlit-moss-forest.webp",
+  // Hero: Panorama-Luftbild Mischwald (FBG)
+  hero: "/images/hero-mixed-forest.webp",
   // Waldweg zwischen Kiefern und Wiese
   forestPath: "/images/forest-path.webp",
   // Sonnenlicht durch die Baumkronen
@@ -28,24 +29,26 @@ export const images = {
   forestFloor: "/images/forest-floor-ferns.webp",
   // Detail: Tree bark close-up
   bark: "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&q=80&auto=format",
+  // Logo des Partnerbetriebs Waldform GmbH
+  waldformLogo: "/images/waldform-logo.webp",
 } as const;
 
 /** Automatische Slider auf /leistungen */
 export const serviceSlides = {
   timberMarketing: [
     {
-      src: "/images/firewood-stack.webp",
-      alt: "Gestapeltes Brennholz — gebündelte Holzvermarktung",
+      src: "/images/stammholz-polter.webp",
+      alt: "Stammholzpolter am Waldweg — gemeinsame Vermarktung gebündelter Holzmengen",
     },
     {
-      src: "/images/firewood-pile.webp",
-      alt: "Brennholz am Waldrand — Holz aus der Region",
+      src: "/images/harvester-holzernte.webp",
+      alt: "Harvester bei der Holzernte in einem Kiefernbestand in Brandenburg",
     },
   ],
   forestryMeasures: [
     {
-      src: "/images/forestry-harvester.webp",
-      alt: "Forstmaschine bei der Holzernte im Wald",
+      src: "/images/harvester-kiefernwald.webp",
+      alt: "Harvester mit Kettenlaufwerk bei der Durchforstung eines Kiefernwaldes",
     },
     {
       src: "/images/forestry-reforestation.webp",

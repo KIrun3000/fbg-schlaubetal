@@ -8,7 +8,7 @@ import { images, serviceSlides, type ImageSlide } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Leistungen — FBG Schlaubetal",
   description:
-    "Die FBG Schlaubetal bündelt Holzvermarktung, Beratung und Waldbewirtschaftung für private Waldbesitzer in der Region Oder-Spree.",
+    "Die FBG Schlaubetal bündelt Holzvermarktung, Beratung und Waldbewirtschaftung für private Waldbesitzer in ganz Brandenburg.",
 };
 
 {/*
@@ -143,20 +143,20 @@ export default function LeistungenPage() {
         <div className="absolute inset-0">
           <Image
             src={images.forestManagement}
-            alt="Kiefernwald mit langen Schatten im Schlaubetal"
+            alt="Kiefernwald mit langen Schatten in Brandenburg"
             fill
             className="object-cover opacity-25"
             priority
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-white/90 drop-shadow-sm mb-3">
             Leistungen
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
             Was eine FBG für Waldbesitzer tut
           </h1>
-          <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
+          <p className="mt-4 text-lg text-white/90 drop-shadow-sm max-w-xl leading-relaxed">
             Holz vermarkten, Maßnahmen organisieren, bei Anträgen helfen —
             die Kernaufgaben einer Forstbetriebsgemeinschaft.
           </p>
@@ -246,8 +246,7 @@ export default function LeistungenPage() {
             </h2>
             <p className="mt-4 text-lg text-anthracite-light max-w-3xl mx-auto">
               Die FBG unterstützt Waldbesitzer bei behördlichen Auflagen und
-              hilft bei Anträgen für folgende Maßnahmen — Inhalte werden vor
-              Go-Live mit der FBG abgestimmt.
+              hilft bei Anträgen für folgende Maßnahmen.
             </p>
           </div>
 
@@ -343,7 +342,7 @@ export default function LeistungenPage() {
             Klingt das für Sie relevant?
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Wenn Sie Wald in der Region besitzen und Unterstützung suchen,
+            Wenn Sie Wald in Brandenburg besitzen und Unterstützung suchen,
             sprechen Sie uns an. Wir erklären Ihnen, was die FBG konkret
             für Sie tun kann.
           </p>

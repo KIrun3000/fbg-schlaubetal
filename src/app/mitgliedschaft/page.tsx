@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Mitgliedschaft — FBG Schlaubetal",
   description:
-    "Werden Sie Mitglied der FBG Schlaubetal. Für private Waldbesitzer in der Region Schlaubetal und Oder-Spree.",
+    "Werden Sie Mitglied der FBG Schlaubetal. Für private Waldbesitzer in ganz Brandenburg — ohne Mitgliedsbeitrag.",
 };
 
 const benefits = [
@@ -21,7 +21,7 @@ const benefits = [
   {
     title: "Jemand, den man fragen kann",
     description:
-      "Was tun bei Borkenkäferbefall? Welche Förderung gibt es? In der FBG haben Sie Ansprechpartner, die die Region und die Situation kennen.",
+      "Was tun bei Borkenkäferbefall? Welche Förderung gibt es? In der FBG haben Sie Ansprechpartner, die Brandenburgs Wälder und die Situation kennen.",
   },
   {
     title: "Auch kleine Flächen zählen",
@@ -36,7 +36,7 @@ const benefits = [
   {
     title: "Kontakt zu Nachbarn",
     description:
-      "In der FBG treffen Sie andere Waldbesitzer aus der Region. Der Austausch untereinander ist oft genauso hilfreich wie die formale Beratung.",
+      "In der FBG treffen Sie andere Waldbesitzer aus Brandenburg. Der Austausch untereinander ist oft genauso hilfreich wie die formale Beratung.",
   },
   {
     title: "Gemeinsam gehört werden",
@@ -46,6 +46,7 @@ const benefits = [
 ];
 
 const membershipApplication = getDownloadById("antrag-mitgliedschaft");
+const membershipStatutes = getDownloadById("satzung");
 
 const steps = [
   {
@@ -58,7 +59,7 @@ const steps = [
     step: "2",
     title: "Beitrittserklärung",
     description:
-      "Wenn Sie sich für eine Mitgliedschaft entscheiden, laden Sie die Beitrittserklärung herunter oder erhalten Sie diese von uns. Die genauen Konditionen besprechen wir vorher.",
+      "Wenn Sie sich für eine Mitgliedschaft entscheiden, laden Sie die Beitrittserklärung herunter oder erhalten Sie diese von uns. Ein Mitgliedsbeitrag wird nicht erhoben.",
   },
   {
     step: "3",
@@ -90,8 +91,8 @@ export default function MitgliedschaftPage() {
             Was bringt mir eine Mitgliedschaft?
           </h1>
           <p className="mt-4 text-lg text-white/70 max-w-xl leading-relaxed">
-            Für private Waldbesitzer in der Region Schlaubetal und Oder-Spree,
-            die ihren Wald nicht allein bewirtschaften wollen.
+            Für private Waldbesitzer in ganz Brandenburg, die ihren Wald nicht
+            allein bewirtschaften wollen.
           </p>
         </div>
       </section>
@@ -154,7 +155,7 @@ export default function MitgliedschaftPage() {
               <div className="mt-6 space-y-4 text-lg text-anthracite-light leading-relaxed">
                 <p>
                   Die FBG Schlaubetal ist offen für alle Eigentümer von
-                  Waldflächen in der Region. Die Größe Ihrer Fläche spielt
+                  Waldflächen in Brandenburg. Die Größe Ihrer Fläche spielt
                   dabei keine entscheidende Rolle — gerade kleinere Bestände
                   profitieren besonders, weil sie allein kaum wirtschaftlich
                   zu bewirtschaften sind.
@@ -167,11 +168,12 @@ export default function MitgliedschaftPage() {
               </div>
               <div className="mt-8 p-6 bg-warmwhite rounded-xl border border-sand-dark/50">
                 <h3 className="font-serif text-base font-bold text-anthracite mb-2">
-                  Mitgliedsbeitrag
+                  Ohne Mitgliedsbeitrag
                 </h3>
                 <p className="text-sm text-anthracite-light">
-                  Die Konditionen besprechen wir gerne persönlich. Nehmen Sie
-                  Kontakt auf — wir informieren Sie unverbindlich.
+                  Für die Mitgliedschaft in der FBG Schlaubetal wird kein
+                  Beitrag erhoben. Nehmen Sie einfach Kontakt auf — wir
+                  informieren Sie unverbindlich.
                 </p>
               </div>
             </div>
@@ -222,31 +224,134 @@ export default function MitgliedschaftPage() {
             ))}
           </div>
 
-          {membershipApplication && (
-            <div className="mt-12 max-w-2xl mx-auto rounded-2xl border border-sand-dark/50 bg-sand/40 p-6 text-center">
-              <h3 className="font-serif text-xl font-bold text-anthracite mb-2">
-                Beitrittserklärung herunterladen
-              </h3>
-              <p className="text-sm text-anthracite-light mb-4">
-                Platzhalterversion — wird durch das offizielle Formular der FBG
-                ersetzt.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a
-                  href={membershipApplication.file}
-                  download={membershipApplication.filename}
-                  className="inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
-                >
-                  Antrag auf Mitgliedschaft (PDF)
-                </a>
-                <Link
-                  href="/downloads"
-                  className="inline-flex items-center justify-center rounded-lg border border-forest px-5 py-3 text-sm font-semibold text-forest transition-colors hover:bg-forest hover:text-white"
-                >
-                  Alle Dokumente
-                </Link>
+          {(membershipApplication || membershipStatutes) && (
+            <AnimateIn animation="fade-up" className="mt-16">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-10">
+                  <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight">
+                    Unterlagen für Ihren Beitritt
+                  </h2>
+                  <p className="mt-4 text-lg text-anthracite-light">
+                    Laden Sie die Formulare herunter, füllen Sie den Antrag aus
+                    und senden Sie ihn an{" "}
+                    <a
+                      href={`mailto:${site.email}`}
+                      className="text-forest font-medium hover:underline"
+                    >
+                      {site.email}
+                    </a>
+                    .
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {membershipApplication && (
+                    <div className="rounded-2xl border border-sand-dark/50 bg-sand/40 p-8 flex flex-col">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest mb-5">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-6 w-6"
+                        >
+                          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                          <line x1="16" y1="13" x2="8" y2="13" />
+                          <line x1="16" y1="17" x2="8" y2="17" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl font-bold text-anthracite mb-2">
+                        Antrag auf Mitgliedschaft
+                      </h3>
+                      <p className="text-base text-anthracite-light leading-relaxed flex-1">
+                        Offizielles Formular zur Aufnahme als Mitglied der FBG
+                        Schlaubetal.
+                      </p>
+                      <a
+                        href={membershipApplication.file}
+                        download={membershipApplication.filename}
+                        className="mt-6 inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
+                      >
+                        Antrag herunterladen (PDF)
+                      </a>
+                    </div>
+                  )}
+
+                  {membershipStatutes && (
+                    <div className="rounded-2xl border border-sand-dark/50 bg-sand/40 p-8 flex flex-col">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest mb-5">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-6 w-6"
+                        >
+                          <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+                          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl font-bold text-anthracite mb-2">
+                        Satzung
+                      </h3>
+                      <p className="text-base text-anthracite-light leading-relaxed flex-1">
+                        Satzung der Forstbetriebsgemeinschaft Schlaubetal —
+                        Grundlage der Mitgliedschaft.
+                      </p>
+                      <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                        <Link
+                          href="/satzung"
+                          className="inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
+                        >
+                          Satzung online lesen
+                        </Link>
+                        <a
+                          href={membershipStatutes.file}
+                          download={membershipStatutes.filename}
+                          className="inline-flex items-center justify-center rounded-lg border border-forest px-5 py-3 text-sm font-semibold text-forest transition-colors hover:bg-forest hover:text-white"
+                        >
+                          PDF herunterladen
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <ol className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
+                  <li>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-forest/10 text-forest font-serif font-bold text-sm mb-3">
+                      1
+                    </span>
+                    <p className="text-sm text-anthracite-light">
+                      Antrag und Satzung herunterladen
+                    </p>
+                  </li>
+                  <li>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-forest/10 text-forest font-serif font-bold text-sm mb-3">
+                      2
+                    </span>
+                    <p className="text-sm text-anthracite-light">
+                      Antrag ausfüllen und unterschreiben
+                    </p>
+                  </li>
+                  <li>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-forest/10 text-forest font-serif font-bold text-sm mb-3">
+                      3
+                    </span>
+                    <p className="text-sm text-anthracite-light">
+                      Per E-Mail oder Post an die FBG senden
+                    </p>
+                  </li>
+                </ol>
               </div>
-            </div>
+            </AnimateIn>
           )}
         </div>
       </section>
