@@ -10,12 +10,17 @@ import { images } from "@/lib/images";
 const VIDEO_URL =
   "https://videos.pexels.com/video-files/3177845/3177845-hd_1920_1080_24fps.mp4";
 
+const POSTER_MIN_MS = 5000;
+
 export function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [loaded, setLoaded] = useState(false);
+  const mountTimeRef = useRef<number | null>(null);
+  const [videoReady, setVideoReady] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    mountTimeRef.current = Date.now();
     const mobile = window.innerWidth < 768;
     setIsMobile(mobile);
 
@@ -24,27 +29,44 @@ export function HeroVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleCanPlay = () => setLoaded(true);
+    const handleCanPlay = () => setVideoReady(true);
     video.addEventListener("canplay", handleCanPlay);
 
     return () => video.removeEventListener("canplay", handleCanPlay);
   }, []);
+
+  useEffect(() => {
+    if (isMobile || !videoReady) return;
+
+    const elapsed = Date.now() - (mountTimeRef.current ?? Date.now());
+    const remaining = Math.max(0, POSTER_MIN_MS - elapsed);
+
+    const timeoutId = window.setTimeout(() => {
+      setShowVideo(true);
+    }, remaining);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [isMobile, videoReady]);
 
   return (
     <div className="absolute inset-0">
       {/* Fallback dark background */}
       <div className="absolute inset-0 bg-[#1a1f16]" />
 
-      {/* Mobile: static image / Desktop: video */}
-      {isMobile ? (
-        <Image
-          src={images.hero}
-          alt="Sonnenlicht in einem moosigen Kiefernwald im Schlaubetal"
-          fill
-          className="object-cover opacity-55"
-          priority
-        />
-      ) : (
+      {/* Poster image — always visible on mobile; crossfades out on desktop */}
+      <Image
+        src={images.hero}
+        alt="Panorama-Luftbild eines lebendigen Mischwalds mit blühenden Bäumen im Schlaubetal"
+        fill
+        className={`object-cover transition-opacity duration-1500 ${
+          isMobile || !showVideo ? "opacity-55" : "opacity-0"
+        }`}
+        priority
+        sizes="100vw"
+      />
+
+      {/* Desktop: video fades in after poster minimum display time */}
+      {!isMobile && (
         <video
           ref={videoRef}
           autoPlay
@@ -52,7 +74,9 @@ export function HeroVideo() {
           loop
           playsInline
           preload="auto"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1500 ${loaded ? "opacity-65" : "opacity-0"}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1500 ${
+            showVideo ? "opacity-65" : "opacity-0"
+          }`}
         >
           <source src={VIDEO_URL} type="video/mp4" />
         </video>

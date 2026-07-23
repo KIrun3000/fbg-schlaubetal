@@ -7,6 +7,7 @@ const pages = [
   { path: "/aktuelles", name: "Aktuelles" },
   { path: "/mitgliedschaft", name: "Mitgliedschaft" },
   { path: "/downloads", name: "Downloads" },
+  { path: "/satzung", name: "Satzung" },
   { path: "/kontakt", name: "Kontakt" },
   { path: "/impressum", name: "Impressum" },
   { path: "/datenschutz", name: "Datenschutz" },

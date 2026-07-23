@@ -15,7 +15,7 @@ export const downloads: DownloadItem[] = [
     filename: "antrag-mitgliedschaft.pdf",
     description:
       "Formular zur Aufnahme als Mitglied der FBG Schlaubetal.",
-    isPlaceholder: true,
+    isPlaceholder: false,
   },
   {
     id: "satzung",
@@ -23,8 +23,8 @@ export const downloads: DownloadItem[] = [
     file: "/downloads/satzung.pdf",
     filename: "satzung.pdf",
     description:
-      "Satzung der Forstbetriebsgemeinschaft Schlaubetal.",
-    isPlaceholder: true,
+      "Satzung der Forstbetriebsgemeinschaft Schlaubetal — online lesbar und als PDF verfügbar.",
+    isPlaceholder: false,
   },
   {
     id: "beitragssaetze",

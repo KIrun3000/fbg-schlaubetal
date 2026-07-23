@@ -20,22 +20,24 @@ export default function DownloadsPage() {
             Formulare und Unterlagen zum Download
           </h1>
           <p className="mt-4 text-lg text-anthracite-light leading-relaxed">
-            Hier finden Sie wichtige Dokumente der FBG Schlaubetal. Die
-            aktuellen Versionen werden bereitgestellt, sobald sie vorliegen.
+            Hier finden Sie wichtige Dokumente der FBG Schlaubetal zum
+            Download.
           </p>
 
-          <div className="mt-8 rounded-2xl bg-earth/10 border border-earth/20 p-4">
-            <p className="text-sm text-earth text-center">
-              Die folgenden PDFs sind Platzhalterversionen und werden durch
-              offizielle Dokumente der FBG ersetzt.
-            </p>
-          </div>
+          {downloads.some((item) => item.isPlaceholder) && (
+            <div className="mt-8 rounded-2xl bg-earth/10 border border-earth/20 p-4">
+              <p className="text-sm text-earth text-center">
+                Beitragssätze und Waldpflegevertrag folgen in Kürze.
+              </p>
+            </div>
+          )}
 
           <div className="mt-12 space-y-4">
             {downloads.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-sand-dark/50 bg-sand/40 p-6"
+                id={item.id}
+                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-sand-dark/50 bg-sand/40 p-6 scroll-mt-24"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest shrink-0">
@@ -70,13 +72,23 @@ export default function DownloadsPage() {
                     )}
                   </div>
                 </div>
-                <a
-                  href={item.file}
-                  download={item.filename}
-                  className="inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light shrink-0"
-                >
-                  PDF herunterladen
-                </a>
+                <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                  {item.id === "satzung" && (
+                    <Link
+                      href="/satzung"
+                      className="inline-flex items-center justify-center rounded-lg border border-forest px-5 py-3 text-sm font-semibold text-forest transition-colors hover:bg-forest hover:text-white"
+                    >
+                      Online lesen
+                    </Link>
+                  )}
+                  <a
+                    href={item.file}
+                    download={item.filename}
+                    className="inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
+                  >
+                    PDF herunterladen
+                  </a>
+                </div>
               </div>
             ))}
           </div>
