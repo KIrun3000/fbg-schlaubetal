@@ -1,21 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useActionState } from "react";
 import { images } from "@/lib/images";
 import { formatAddress, site } from "@/lib/site";
+import { sendContactMessage, type ContactFormState } from "./actions";
+
+const initialFormState: ContactFormState = { status: "idle" };
 
 export default function KontaktPage() {
-  const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setFormState("sending");
-    // Placeholder: In production, this would send via Server Action or API
-    setTimeout(() => {
-      setFormState("sent");
-    }, 1000);
-  }
+  const [formState, formAction, pending] = useActionState(
+    sendContactMessage,
+    initialFormState,
+  );
 
   return (
     <>
@@ -54,7 +51,7 @@ export default function KontaktPage() {
                 Nachricht senden
               </h2>
 
-              {formState === "sent" ? (
+              {formState.status === "sent" ? (
                 <div className="rounded-2xl bg-forest/5 border border-forest/20 p-10 text-center">
                   <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-forest/10 text-forest mb-5">
                     <svg
@@ -79,7 +76,29 @@ export default function KontaktPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form action={formAction} className="space-y-6">
+                  {formState.status === "error" && (
+                    <p
+                      role="alert"
+                      aria-live="polite"
+                      className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+                    >
+                      {formState.message}
+                    </p>
+                  )}
+
+                  {/* Honeypot gegen Spam-Bots – für Menschen unsichtbar */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label
@@ -93,6 +112,7 @@ export default function KontaktPage() {
                         id="name"
                         name="name"
                         required
+                        defaultValue={formState.values?.name}
                         className="w-full rounded-lg border border-sand-dark bg-white px-4 py-3 text-anthracite placeholder:text-anthracite-light/50 focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20 transition-colors"
                         placeholder="Ihr Name"
                       />
@@ -109,6 +129,7 @@ export default function KontaktPage() {
                         id="email"
                         name="email"
                         required
+                        defaultValue={formState.values?.email}
                         className="w-full rounded-lg border border-sand-dark bg-white px-4 py-3 text-anthracite placeholder:text-anthracite-light/50 focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20 transition-colors"
                         placeholder="ihre@email.de"
                       />
@@ -126,6 +147,7 @@ export default function KontaktPage() {
                       type="tel"
                       id="phone"
                       name="phone"
+                      defaultValue={formState.values?.phone}
                       className="w-full rounded-lg border border-sand-dark bg-white px-4 py-3 text-anthracite placeholder:text-anthracite-light/50 focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20 transition-colors"
                       placeholder="Ihre Telefonnummer"
                     />
@@ -142,6 +164,10 @@ export default function KontaktPage() {
                       id="subject"
                       name="subject"
                       required
+                      // Ein nachträglich geändertes defaultValue wirkt bei <select>
+                      // nicht mehr – der key erzwingt das Neu-Mounten.
+                      key={formState.values?.subject ?? ""}
+                      defaultValue={formState.values?.subject ?? ""}
                       className="w-full rounded-lg border border-sand-dark bg-white px-4 py-3 text-anthracite focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20 transition-colors"
                     >
                       <option value="">Bitte wählen…</option>
@@ -167,6 +193,7 @@ export default function KontaktPage() {
                       name="message"
                       required
                       rows={6}
+                      defaultValue={formState.values?.message}
                       className="w-full rounded-lg border border-sand-dark bg-white px-4 py-3 text-anthracite placeholder:text-anthracite-light/50 focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20 transition-colors resize-y"
                       placeholder="Ihre Nachricht an uns…"
                     />
@@ -195,10 +222,10 @@ export default function KontaktPage() {
 
                   <button
                     type="submit"
-                    disabled={formState === "sending"}
+                    disabled={pending}
                     className="inline-flex items-center justify-center rounded-lg bg-forest px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-forest-light shadow-sm disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {formState === "sending" ? (
+                    {pending ? (
                       <>
                         <svg
                           className="animate-spin -ml-1 mr-3 h-5 w-5"
