@@ -1,6 +1,6 @@
 export const site = {
   name: "FBG Schlaubetal",
-  tagline: "Forstbetriebsgemeinschaft",
+  tagline: "Wald verstehen. Zukunft gestalten. Gemeinsam handeln.",
   url: "https://fbg-schlaubetal.de",
   email: "info@fbg-schlaubetal.de",
   address: {

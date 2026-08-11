@@ -26,7 +26,7 @@ export default function DownloadsPage() {
 
           {downloads.some((item) => item.isPlaceholder) && (
             <div className="mt-8 rounded-2xl bg-earth/10 border border-earth/20 p-4">
-              <p className="text-sm text-earth text-center">
+              <p className="text-sm text-earth-dark text-center">
                 Beitragssätze und Waldpflegevertrag folgen in Kürze.
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function DownloadsPage() {
                       {item.description}
                     </p>
                     {item.isPlaceholder && (
-                      <p className="mt-2 text-xs italic text-earth">
+                      <p className="mt-2 text-xs italic text-earth-dark">
                         Platzhalterversion
                       </p>
                     )}

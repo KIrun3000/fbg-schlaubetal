@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Merriweather } from "next/font/google";
+import { Fraunces, Mulish } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 
-const inter = Inter({
-  variable: "--font-sans",
+const mulish = Mulish({
+  variable: "--font-mulish",
   subsets: ["latin"],
   display: "swap",
 });
 
-const merriweather = Merriweather({
-  variable: "--font-serif",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
   display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
 export const metadata: Metadata = {
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${inter.variable} ${merriweather.variable} h-full antialiased`}
+      className={`${mulish.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <Header />

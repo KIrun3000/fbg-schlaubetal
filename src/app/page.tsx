@@ -3,6 +3,7 @@ import Link from "next/link";
 import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
 import { HeroVideo } from "@/components/HeroVideo";
+import { TopoLines } from "@/components/TopoLines";
 import {
   formatAktuellesDate,
   getCategoryLabel,
@@ -12,18 +13,19 @@ import { formatAddress, site } from "@/lib/site";
 
 function HeroSection() {
   return (
-    <section className="relative bg-[#1a1f16] overflow-hidden min-h-[85vh] sm:min-h-[92vh] flex items-end">
+    <section className="relative bg-forest-dark overflow-hidden min-h-[85vh] sm:min-h-[92vh] flex items-end">
       <HeroVideo />
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8 pt-20 pb-28 sm:pt-24 sm:pb-32 lg:pb-36 w-full">
-        <div className="max-w-2xl [text-shadow:0_1px_12px_rgba(26,31,22,0.45)]">
+        <div className="max-w-2xl [text-shadow:0_1px_12px_rgba(24,52,42,0.45)]">
           <AnimateIn animation="fade-in" duration={1200}>
+            <div className="h-0.5 w-12 bg-earth mb-5" aria-hidden="true" />
             <p className="text-sm font-medium uppercase tracking-widest text-white/90 mb-4">
               Forstbetriebsgemeinschaft in Brandenburg
             </p>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight">
               Wir vertreten{" "}
-              <span className="text-forest-light">
+              <span className="text-sand">
                 Waldbesitzer in ganz Brandenburg.
               </span>
             </h1>
@@ -31,18 +33,18 @@ function HeroSection() {
           <AnimateIn animation="fade-up" delay={400} duration={1100}>
             <p className="mt-6 text-lg sm:text-xl text-white/85 leading-relaxed max-w-xl">
               Die FBG Schlaubetal bündelt die Interessen privater Waldbesitzer
-              in ganz Brandenburg — anerkannt durch das Land Brandenburg.
+              in ganz Brandenburg, anerkannt durch das Land Brandenburg.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/kontakt"
-                className="inline-flex items-center justify-center rounded-lg bg-forest-light px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-forest/20 transition-all duration-300 hover:bg-forest hover:shadow-xl hover:shadow-forest/30 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-lg bg-earth px-7 py-3.5 text-base font-bold text-forest-dark shadow-lg shadow-forest-dark/20 transition-all duration-300 hover:bg-earth-light hover:shadow-xl hover:shadow-forest-dark/30 hover:-translate-y-0.5"
               >
                 Kontakt aufnehmen
               </Link>
               <Link
                 href="/mitgliedschaft"
-                className="inline-flex items-center justify-center rounded-lg border border-white/20 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+                className="inline-flex items-center justify-center rounded-lg border border-white/25 px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-white/10 hover:border-white/40"
               >
                 Mitglied werden
               </Link>
@@ -51,11 +53,16 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom wave */}
+      {/* Bottom wave — Talschwung, dem Logo nachempfunden */}
       <div className="absolute -bottom-px left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-auto" preserveAspectRatio="none">
+        <svg viewBox="0 0 1440 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="block w-full h-auto" preserveAspectRatio="none">
           <path
-            d="M0 60V20C240 40 480 50 720 40C960 30 1200 10 1440 20V60H0Z"
+            d="M0 72V30C260 52 520 62 740 48C980 33 1220 10 1440 26V72H0Z"
+            fill="var(--color-sand)"
+            opacity="0.5"
+          />
+          <path
+            d="M0 72V38C240 56 480 66 720 54C960 42 1200 20 1440 32V72H0Z"
             fill="var(--color-warmwhite)"
           />
         </svg>
@@ -69,6 +76,7 @@ function IntroSection() {
     <section className="py-20 lg:py-24 bg-warmwhite">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="mx-auto max-w-3xl text-center">
+          <div className="mx-auto h-0.5 w-12 bg-earth mb-6" aria-hidden="true" />
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
             Wer allein Wald besitzt, steht oft allein vor großen Fragen.
           </h2>
@@ -92,7 +100,7 @@ function WaldbrandSection() {
     <section className="py-20 lg:py-24 bg-earth/10 border-y border-earth/20">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="mx-auto max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-widest text-earth mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-earth-dark mb-3">
             Aktuelles
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
@@ -321,8 +329,9 @@ function ForWaldbesitzerSection() {
 
 function RegionSection() {
   return (
-    <section className="py-20 lg:py-24 bg-sand">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
+    <section className="relative py-20 lg:py-24 bg-sand overflow-hidden">
+      <TopoLines className="pointer-events-none absolute -right-24 -bottom-32 h-[520px] w-[520px] text-forest/[0.07]" />
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
             Unser Gebiet
@@ -413,7 +422,7 @@ function AktuellesSection() {
                   {item.excerpt}
                 </p>
                 {item.isPlaceholder && (
-                  <p className="mt-4 text-xs italic text-earth">
+                  <p className="mt-4 text-xs italic text-earth-dark">
                     Beispieleintrag — wird durch die FBG ersetzt
                   </p>
                 )}
@@ -440,9 +449,12 @@ function AktuellesSection() {
 
 function CtaSection() {
   return (
-    <section className="py-20 lg:py-24 bg-forest-dark">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8 text-center">
+    <section className="relative py-20 lg:py-24 bg-forest-dark overflow-hidden">
+      <TopoLines className="pointer-events-none absolute -right-16 -top-24 h-[560px] w-[560px] text-warmwhite/[0.06]" />
+      <TopoLines className="pointer-events-none absolute -left-32 -bottom-40 h-[480px] w-[480px] text-warmwhite/[0.04]" />
+      <div className="relative mx-auto max-w-6xl px-6 lg:px-8 text-center">
         <AnimateIn animation="fade-up">
+          <div className="mx-auto h-0.5 w-12 bg-earth mb-6" aria-hidden="true" />
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
             Fragen? Melden Sie sich bei uns.
           </h2>
@@ -458,7 +470,7 @@ function CtaSection() {
             <p>
               <a
                 href={`mailto:${site.email}`}
-                className="text-forest-light hover:text-white transition-colors duration-300"
+                className="text-moss hover:text-white transition-colors duration-300"
               >
                 {site.email}
               </a>
@@ -468,7 +480,7 @@ function CtaSection() {
           <div className="mt-10">
             <Link
               href="/kontakt"
-              className="inline-flex items-center justify-center rounded-lg bg-forest-light px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-forest hover:shadow-xl hover:shadow-forest/30 hover:-translate-y-0.5 shadow-lg shadow-forest/20"
+              className="inline-flex items-center justify-center rounded-lg bg-earth px-8 py-4 text-base font-bold text-forest-dark transition-all duration-300 hover:bg-earth-light hover:shadow-xl hover:shadow-forest-dark/30 hover:-translate-y-0.5 shadow-lg shadow-forest-dark/20"
             >
               Nachricht schreiben
             </Link>

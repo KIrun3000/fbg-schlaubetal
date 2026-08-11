@@ -51,7 +51,7 @@ export function HeroVideo() {
   return (
     <div className="absolute inset-0">
       {/* Fallback dark background */}
-      <div className="absolute inset-0 bg-[#1a1f16]" />
+      <div className="absolute inset-0 bg-[#18342a]" />
 
       {/* Poster image — always visible on mobile; crossfades out on desktop */}
       <Image
@@ -83,8 +83,8 @@ export function HeroVideo() {
       )}
 
       {/* Overlay for text contrast — stronger on the left where copy sits */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1f16]/75 via-[#1a1f16]/35 to-[#1a1f16]/15" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f16]/55 via-[#1a1f16]/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#18342a]/75 via-[#18342a]/35 to-[#18342a]/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#18342a]/55 via-[#18342a]/10 to-transparent" />
     </div>
   );
 }

@@ -84,7 +84,7 @@ export default function MitgliedschaftPage() {
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-moss mb-3">
             Mitgliedschaft
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
@@ -370,7 +370,7 @@ export default function MitgliedschaftPage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/kontakt"
-              className="inline-flex items-center justify-center rounded-lg bg-forest-light px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-forest"
+              className="inline-flex items-center justify-center rounded-lg bg-earth px-7 py-3.5 text-base font-bold text-forest-dark transition-colors hover:bg-earth-light"
             >
               Nachricht schreiben
             </Link>

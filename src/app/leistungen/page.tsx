@@ -166,7 +166,7 @@ export default function LeistungenPage() {
       {/* Hinweis */}
       <section className="bg-earth/10 border-b border-earth/20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 py-4">
-          <p className="text-sm text-earth text-center">
+          <p className="text-sm text-earth-dark text-center">
             Die folgenden Leistungen beschreiben typische Aufgaben einer FBG.
             Das genaue Angebot der FBG Schlaubetal wird nach Rücksprache hier
             ergänzt.
@@ -349,7 +349,7 @@ export default function LeistungenPage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/mitgliedschaft"
-              className="inline-flex items-center justify-center rounded-lg bg-forest-light px-7 py-3.5 text-base font-semibold text-white transition-colors hover:bg-forest"
+              className="inline-flex items-center justify-center rounded-lg bg-earth px-7 py-3.5 text-base font-bold text-forest-dark transition-colors hover:bg-earth-light"
             >
               Zur Mitgliedschaft
             </Link>

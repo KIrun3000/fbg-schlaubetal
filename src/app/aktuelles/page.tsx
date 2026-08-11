@@ -23,7 +23,7 @@ export default function AktuellesPage() {
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-moss mb-3">
             Aktuelles
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
@@ -40,7 +40,7 @@ export default function AktuellesPage() {
       <section className="py-20 lg:py-24 bg-warmwhite">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="mb-8 rounded-2xl bg-earth/10 border border-earth/20 p-4">
-            <p className="text-sm text-earth text-center">
+            <p className="text-sm text-earth-dark text-center">
               Die folgenden Einträge sind Platzhalter und werden durch die FBG
               Schlaubetal mit echten Terminen und Meldungen ersetzt.
             </p>

@@ -71,7 +71,7 @@ export function AktuellesList() {
                 {formatAktuellesDate(item.date)}
               </time>
               {item.isPlaceholder && (
-                <span className="text-xs italic text-earth">
+                <span className="text-xs italic text-earth-dark">
                   Beispieleintrag
                 </span>
               )}

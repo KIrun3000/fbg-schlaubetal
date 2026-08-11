@@ -26,7 +26,7 @@ export default function UeberUnsPage() {
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-forest-light/80 mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-moss mb-3">
             Über die FBG
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
@@ -323,7 +323,7 @@ export default function UeberUnsPage() {
               },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="font-serif text-3xl sm:text-4xl font-bold text-forest-light">
+                <p className="font-serif text-3xl sm:text-4xl font-bold text-moss">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-base font-medium text-white/80">

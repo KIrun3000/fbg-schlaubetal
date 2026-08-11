@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { footerNavigation, formatAddress, site } from "@/lib/site";
+import { footerNavigation, site } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -8,28 +9,18 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Column 1: About */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-4 w-4"
-                >
-                  <path d="M17 20H7l5-16 5 16z" />
-                  <path d="M12 20v-4" />
-                  <path d="M9 12h6" />
-                </svg>
-              </div>
-              <span className="font-serif text-base font-bold text-white">
-                {site.name}
-              </span>
-            </div>
-            <p className="text-sm leading-relaxed text-white/60">
+            <Image
+              src="/images/logo/logo-fbg-invers.svg"
+              alt={site.name}
+              width={337}
+              height={96}
+              className="h-14 w-auto mb-5"
+            />
+            <div className="h-px w-10 bg-earth mb-5" aria-hidden="true" />
+            <p className="text-sm leading-relaxed text-white/70">
+              Wald verstehen. Zukunft gestalten. Gemeinsam handeln.
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/60">
               Die Forstbetriebsgemeinschaft für private Waldbesitzer in ganz
               Brandenburg.
             </p>

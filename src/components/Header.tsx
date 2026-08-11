@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { navigation, site } from "@/lib/site";
@@ -18,32 +19,19 @@ export function Header() {
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-warmwhite/95 backdrop-blur-md shadow-sm border-b border-sand-dark" : "bg-warmwhite/80 backdrop-blur-sm border-b border-transparent"}`}>
       <nav className="mx-auto max-w-6xl px-6 lg:px-8" aria-label="Hauptnavigation">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo / Wordmark */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-forest text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M17 20H7l5-16 5 16z" />
-                <path d="M12 20v-4" />
-                <path d="M9 12h6" />
-              </svg>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg font-bold text-forest leading-tight">
-                {site.name}
-              </span>
-              <span className="text-xs text-anthracite-light leading-tight hidden sm:block">
-                {site.tagline}
-              </span>
-            </div>
+          {/* Logo / Wortbildmarke */}
+          <Link
+            href="/"
+            className="group transition-opacity hover:opacity-80"
+          >
+            <Image
+              src="/images/logo/logo-fbg.svg"
+              alt={`${site.name}: ${site.tagline}`}
+              width={337}
+              height={96}
+              priority
+              className="h-12 w-auto sm:h-14"
+            />
           </Link>
 
           {/* Desktop Navigation */}
