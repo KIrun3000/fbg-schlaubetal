@@ -25,8 +25,8 @@ export default function DownloadsPage() {
           </p>
 
           {downloads.some((item) => item.isPlaceholder) && (
-            <div className="mt-8 rounded-2xl bg-earth/10 border border-earth/20 p-4">
-              <p className="text-sm text-earth-dark text-center">
+            <div className="mt-8 rounded-2xl bg-sand border-l-4 border-earth p-4">
+              <p className="text-sm text-anthracite-light text-center">
                 Beitragssätze und Waldpflegevertrag folgen in Kürze.
               </p>
             </div>

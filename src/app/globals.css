@@ -2,23 +2,23 @@
 
 /*
   Farbpalette nach CI FBG Schlaubetal (CI_FBG_Schlaubetal.pdf):
-  Deep Forest #214A3A, Moss Green #828D59 / #6B7753, Warm Sand #EFE6D6,
-  Natural Clay #C0B0A3, Burnt Orange #E96B2C, Graphite #2E3133,
-  Morning Mist #F7F5F1, River Slate #72898A
+  Deep Forest #214A3A, Moss Green #6B7753 (Logo-Variante #828D59),
+  Warm Sand #EFE6D6, Natural Clay #CDBDA3, Burnt Orange #E96B2C,
+  Graphite #2E3133, Morning Mist #F7F5F1, River Slate #72888A
 */
 @theme inline {
   --color-forest: #214a3a;
   --color-forest-light: #2f6350;
   --color-forest-dark: #18342a;
-  --color-moss: #828d59;
-  --color-moss-dark: #6b7753;
+  --color-moss: #6b7753;
+  --color-moss-light: #828d59;
   --color-sand: #efe6d6;
   --color-sand-dark: #e2d5bd;
-  --color-clay: #c0b0a3;
+  --color-clay: #cdbda3;
   --color-earth: #e96b2c;
   --color-earth-light: #ee8a55;
   --color-earth-dark: #c2551d;
-  --color-slate: #72898a;
+  --color-slate: #72888a;
   --color-warmwhite: #f7f5f1;
   --color-anthracite: #2e3133;
   --color-anthracite-light: #5c6260;

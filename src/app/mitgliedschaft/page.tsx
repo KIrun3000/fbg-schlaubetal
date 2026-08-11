@@ -84,7 +84,7 @@ export default function MitgliedschaftPage() {
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-moss mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-moss-light mb-3">
             Mitgliedschaft
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
@@ -185,7 +185,7 @@ export default function MitgliedschaftPage() {
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-earth/10 -z-10" />
+              <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-earth -z-10" />
             </div>
           </div>
         </div>

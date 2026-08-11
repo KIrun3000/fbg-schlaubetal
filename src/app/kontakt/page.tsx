@@ -28,7 +28,7 @@ export default function KontaktPage() {
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-moss mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-moss-light mb-3">
             Kontakt
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">

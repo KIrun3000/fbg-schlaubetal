@@ -3,6 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimateIn } from "@/components/AnimateIn";
 import { ServiceImageSlider } from "@/components/ServiceImageSlider";
+import {
+  IconFoerderung,
+  IconGemeinschaft,
+  IconHolzvermarktung,
+  IconVerantwortung,
+  IconWaldumbau,
+  IconZukunft,
+} from "@/components/icons";
 import { images, serviceSlides, type ImageSlide } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -70,33 +78,25 @@ const advisoryServices = [
     title: "Waldumbau",
     description:
       "Beratung und Hilfe bei Anträgen für klimaresilienten Waldumbau — von der Bestandseinschätzung bis zur behördlichen Abstimmung.",
-    icon: (
-      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-    ),
+    icon: <IconWaldumbau className="h-6 w-6" />,
   },
   {
     title: "Waldbewirtschaftung und Pflege",
     description:
       "Unterstützung bei Bewirtschaftungsplänen, Pflegemaßnahmen und der Koordination forstlicher Arbeiten für Mitglieder.",
-    icon: (
-      <path d="M17 20H7l5-16 5 16z" />
-    ),
+    icon: <IconZukunft className="h-6 w-6" />,
   },
   {
     title: "Verkehrssicherheit",
     description:
       "Beratung bei behördlichen Auflagen und Hilfe bei Maßnahmen zur Verkehrssicherung entlang von Wegen und Straßen.",
-    icon: (
-      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
-    ),
+    icon: <IconVerantwortung className="h-6 w-6" />,
   },
   {
     title: "Holzernte und Vermarktung",
     description:
       "Koordination von Holzernte und gebündelter Vermarktung — damit auch kleinere Mengen wirtschaftlich abgesetzt werden können.",
-    icon: (
-      <path d="M12 3v18M8 7l4-4 4 4M4 14h16M4 18h16" />
-    ),
+    icon: <IconHolzvermarktung className="h-6 w-6" />,
   },
 ];
 
@@ -105,24 +105,22 @@ const additionalServices = [
     title: "Fördermittel und Anträge",
     description:
       "Für Waldbesitzer gibt es verschiedene Förderprogramme — aber die Antragsstellung ist oft aufwendig. Die FBG unterstützt bei der Orientierung und Beantragung.",
-    icon: (
-      <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-    ),
+    icon: <IconFoerderung className="h-6 w-6" />,
   },
   {
     title: "Erfahrungsaustausch",
     description:
       "In einer FBG trifft man andere Waldbesitzer aus der Nachbarschaft. Der Austausch untereinander ist oft genauso wertvoll wie die formale Beratung.",
-    icon: (
-      <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-    ),
+    icon: <IconGemeinschaft className="h-6 w-6" />,
   },
   {
     title: "Interessenvertretung",
     description:
       "Einzelne Waldbesitzer werden von der Politik selten gehört. Als organisierte Gemeinschaft können wir Interessen gegenüber Verwaltung und Markt wirksamer vertreten.",
     icon: (
-      <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+        <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3" />
+      </svg>
     ),
   },
   {
@@ -130,7 +128,9 @@ const additionalServices = [
     description:
       "Gruppenzertifizierungen wie PEFC dokumentieren nachhaltige Waldwirtschaft. Über die FBG ist eine solche Zertifizierung auch für kleine Flächen möglich.",
     icon: (
-      <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6" aria-hidden="true">
+        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
     ),
   },
 ];
@@ -164,9 +164,9 @@ export default function LeistungenPage() {
       </section>
 
       {/* Hinweis */}
-      <section className="bg-earth/10 border-b border-earth/20">
+      <section className="bg-sand border-b border-sand-dark">
         <div className="mx-auto max-w-6xl px-6 lg:px-8 py-4">
-          <p className="text-sm text-earth-dark text-center">
+          <p className="text-sm text-anthracite-light text-center">
             Die folgenden Leistungen beschreiben typische Aufgaben einer FBG.
             Das genaue Angebot der FBG Schlaubetal wird nach Rücksprache hier
             ergänzt.
@@ -258,18 +258,7 @@ export default function LeistungenPage() {
               >
                 <div className="flex items-start gap-5">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest shrink-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6"
-                    >
-                      {service.icon}
-                    </svg>
+                    {service.icon}
                   </div>
                   <div>
                     <h3 className="font-serif text-lg font-bold text-anthracite">
@@ -307,18 +296,7 @@ export default function LeistungenPage() {
               >
                 <div className="flex items-start gap-5">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-forest/10 text-forest shrink-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6"
-                    >
-                      {service.icon}
-                    </svg>
+                    {service.icon}
                   </div>
                   <div>
                     <h3 className="font-serif text-lg font-bold text-anthracite">

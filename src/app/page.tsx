@@ -5,6 +5,12 @@ import { AnimateIn } from "@/components/AnimateIn";
 import { HeroVideo } from "@/components/HeroVideo";
 import { TopoLines } from "@/components/TopoLines";
 import {
+  IconGemeinschaft,
+  IconHolzvermarktung,
+  IconVerantwortung,
+  IconWaldumbau,
+} from "@/components/icons";
+import {
   formatAktuellesDate,
   getCategoryLabel,
   getLatestAktuelles,
@@ -97,17 +103,17 @@ const WALDBRAND_URL =
 
 function WaldbrandSection() {
   return (
-    <section className="py-20 lg:py-24 bg-earth/10 border-y border-earth/20">
+    <section className="py-20 lg:py-24 bg-earth">
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
         <AnimateIn animation="fade-up" className="mx-auto max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-earth-dark mb-3">
+          <p className="text-sm font-bold uppercase tracking-widest text-forest-dark/80 mb-3">
             Aktuelles
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest-dark leading-tight">
             Waldbrandgefahr steigt – Mitglieder profitieren von zusätzlichem
             Schutz
           </h2>
-          <p className="mt-6 text-lg text-anthracite-light leading-relaxed">
+          <p className="mt-6 text-lg text-forest-dark/90 leading-relaxed">
             Die Sommer werden trockener und das Risiko von Waldbränden nimmt zu.
             Deshalb ist die Brandschutzversicherung ein besonderer Vorteil für
             Mitglieder der FBG Schlaubetal. Wenn Sie Waldbesitzer sind und von
@@ -119,7 +125,7 @@ function WaldbrandSection() {
               href={WALDBRAND_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-forest px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-forest-light hover:-translate-y-0.5 hover:shadow-lg shadow-sm"
+              className="group inline-flex items-center justify-center gap-2 rounded-lg bg-forest-dark px-7 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:bg-forest hover:-translate-y-0.5 hover:shadow-lg shadow-sm"
             >
               Aktuelle Waldbrandgefahrenstufen in Brandenburg
               <svg
@@ -135,7 +141,7 @@ function WaldbrandSection() {
             </a>
             <Link
               href="/mitgliedschaft"
-              className="inline-flex items-center justify-center rounded-lg border border-forest px-7 py-3.5 text-base font-semibold text-forest transition-all duration-300 hover:bg-forest hover:text-white"
+              className="inline-flex items-center justify-center rounded-lg border border-forest-dark/50 px-7 py-3.5 text-base font-semibold text-forest-dark transition-all duration-300 hover:bg-forest-dark hover:border-forest-dark hover:text-white"
             >
               Mehr zur Mitgliedschaft
             </Link>
@@ -156,49 +162,25 @@ const services = [
     title: "Holz gemeinsam vermarkten",
     description:
       "Einzelne Waldbesitzer haben am Holzmarkt wenig Verhandlungsgewicht. Als Gemeinschaft bündeln wir Mengen und schaffen so Zugang zu Abnehmern, die für Einzelne kaum erreichbar wären.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
-        <path d="M12 3v18" />
-        <path d="M8 7l4-4 4 4" />
-        <path d="M4 14h16" />
-        <path d="M4 18h16" />
-      </svg>
-    ),
+    icon: <IconHolzvermarktung className="h-7 w-7" />,
   },
   {
     title: "Beratung vor Ort",
     description:
       "Viele Waldbesitzer haben ihren Wald geerbt und wissen nicht genau, was zu tun ist. Wir helfen bei der Einschätzung des Bestandes, bei Fragen zu Fördermitteln und bei der Planung konkreter Maßnahmen.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
-        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
+    icon: <IconGemeinschaft className="h-7 w-7" />,
   },
   {
     title: "Wald pflegen und bewirtschaften",
     description:
       "Ob Durchforstung, Wiederbepflanzung oder Schadholzaufarbeitung — wir koordinieren forstliche Maßnahmen, damit auch kleinere Flächen fachgerecht betreut werden können.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
-        <path d="M17 20H7l5-16 5 16z" />
-        <path d="M12 20v-4" />
-        <path d="M9 12h6" />
-      </svg>
-    ),
+    icon: <IconWaldumbau className="h-7 w-7" />,
   },
   {
     title: "Verkehrssicherheit",
     description:
       "Entlang von Wegen und Straßen müssen Waldbesitzer für Verkehrssicherheit sorgen. Die FBG berät bei behördlichen Auflagen und koordiniert die nötigen Maßnahmen.",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
-        <path d="M12 9v4" />
-        <path d="M12 17h.01" />
-        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
-      </svg>
-    ),
+    icon: <IconVerantwortung className="h-7 w-7" />,
   },
 ];
 
@@ -318,7 +300,7 @@ function ForWaldbesitzerSection() {
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.02]"
               />
-              <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth/10 -z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
+              <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth -z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
             </div>
           </AnimateIn>
         </div>
@@ -470,7 +452,7 @@ function CtaSection() {
             <p>
               <a
                 href={`mailto:${site.email}`}
-                className="text-moss hover:text-white transition-colors duration-300"
+                className="text-moss-light hover:text-white transition-colors duration-300"
               >
                 {site.email}
               </a>

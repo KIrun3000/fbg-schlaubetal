@@ -3,6 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
+import {
+  IconGemeinschaft,
+  IconHolzvermarktung,
+  IconVerantwortung,
+} from "@/components/icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -26,7 +31,7 @@ export default function UeberUnsPage() {
           />
         </div>
         <div className="relative mx-auto max-w-6xl px-6 lg:px-8 py-20 sm:py-28">
-          <p className="text-sm font-medium uppercase tracking-widest text-moss mb-3">
+          <p className="text-sm font-medium uppercase tracking-widest text-moss-light mb-3">
             Über die FBG
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight max-w-2xl">
@@ -150,48 +155,31 @@ export default function UeberUnsPage() {
                 title: "Flächen bündeln",
                 text: "Kleine Parzellen werden zusammengefasst — das macht Bewirtschaftung und Vermarktung erst wirtschaftlich.",
                 icon: (
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7" aria-hidden="true">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
                 ),
               },
               {
                 title: "Gemeinsam verkaufen",
                 text: "Größere Holzmengen bedeuten bessere Preise. Allein hat man am Markt kaum Verhandlungsgewicht.",
-                icon: (
-                  <>
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
-                  </>
-                ),
+                icon: <IconHolzvermarktung className="h-7 w-7" />,
               },
               {
                 title: "Wissen teilen",
                 text: "Nicht jeder Waldbesitzer ist vom Fach. In der Gemeinschaft gibt es Erfahrung, Beratung und Austausch.",
-                icon: (
-                  <path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
-                ),
+                icon: <IconGemeinschaft className="h-7 w-7" />,
               },
               {
                 title: "Interessen vertreten",
                 text: "Gegenüber Behörden, Forstämtern und am Markt hat eine organisierte Gemeinschaft mehr Gewicht als ein Einzelner.",
-                icon: (
-                  <path d="M17 20H7l5-16 5 16zM12 20v-4M9 12h6" />
-                ),
+                icon: <IconVerantwortung className="h-7 w-7" />,
               },
             ].map((item, i) => (
               <AnimateIn key={item.title} animation="fade-up" delay={i * 120}>
               <div className="text-center">
                 <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-forest/10 text-forest mb-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-7 w-7"
-                  >
-                    {item.icon}
-                  </svg>
+                  {item.icon}
                 </div>
                 <h3 className="font-serif text-lg font-bold text-anthracite mb-2">
                   {item.title}
@@ -218,7 +206,7 @@ export default function UeberUnsPage() {
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth/10 -z-10" />
+              <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth -z-10" />
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">
@@ -323,7 +311,7 @@ export default function UeberUnsPage() {
               },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="font-serif text-3xl sm:text-4xl font-bold text-moss">
+                <p className="font-serif text-3xl sm:text-4xl font-bold text-moss-light">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-base font-medium text-white/80">
