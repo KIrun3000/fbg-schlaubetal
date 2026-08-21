@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Satzung — FBG Schlaubetal",
   description:
     "Satzung der Forstbetriebsgemeinschaft Schlaubetal — Rechte, Pflichten und Organisation der FBG.",
+  alternates: {
+    canonical: "/satzung",
+  },
 };
 
 export default function SatzungPage() {

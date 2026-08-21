@@ -3,6 +3,9 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Impressum — FBG Schlaubetal",
+  alternates: {
+    canonical: "/impressum",
+  },
 };
 
 export default function ImpressumPage() {

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Leistungen — FBG Schlaubetal",
   description:
     "Die FBG Schlaubetal bündelt Holzvermarktung, Beratung und Waldbewirtschaftung für private Waldbesitzer in ganz Brandenburg.",
+  alternates: {
+    canonical: "/leistungen",
+  },
 };
 
 {/*

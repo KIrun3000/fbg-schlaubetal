@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   title: "FBG Schlaubetal — Forstbetriebsgemeinschaft für private Waldbesitzer",
   description:
     "Die FBG Schlaubetal ist der Zusammenschluss privater Waldbesitzer in ganz Brandenburg. Gemeinsam für unseren Wald.",
-  alternates: {
-    canonical: "/",
-  },
+  // Kein canonical im Layout: Der Wert würde an alle Unterseiten vererbt und
+  // jede Seite als Dublette der Startseite ausweisen. Jede Seite setzt ihren
+  // eigenen canonical in ihrer metadata-Deklaration.
   openGraph: {
     title: "FBG Schlaubetal — Gemeinsam für unseren Wald",
     description:
