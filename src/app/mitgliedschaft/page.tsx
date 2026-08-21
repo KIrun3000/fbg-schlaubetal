@@ -3,13 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/lib/images";
 import { AnimateIn } from "@/components/AnimateIn";
-import { getDownloadById } from "@/lib/downloads";
+import { getDownloadById, getDownloadFormatLabel } from "@/lib/downloads";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Mitgliedschaft — FBG Schlaubetal",
   description:
     "Werden Sie Mitglied der FBG Schlaubetal. Für private Waldbesitzer in ganz Brandenburg — ohne Mitgliedsbeitrag.",
+  alternates: {
+    canonical: "/mitgliedschaft",
+  },
 };
 
 const benefits = [
@@ -76,8 +79,8 @@ export default function MitgliedschaftPage() {
       <section className="relative bg-forest-dark overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={images.community}
-            alt="Weite Landschaft"
+            src={images.membership}
+            alt="Kiefernwald in Brandenburg im warmen Abendlicht"
             fill
             className="object-cover opacity-25"
             priority
@@ -276,7 +279,8 @@ export default function MitgliedschaftPage() {
                         download={membershipApplication.filename}
                         className="mt-6 inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
                       >
-                        Antrag herunterladen (PDF)
+                        Antrag herunterladen (
+                        {getDownloadFormatLabel(membershipApplication)})
                       </a>
                     </div>
                   )}

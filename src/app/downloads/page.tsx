@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { downloads } from "@/lib/downloads";
+import { downloads, getDownloadFormatLabel } from "@/lib/downloads";
 
 export const metadata: Metadata = {
   title: "Dokumente — FBG Schlaubetal",
   description:
     "Formulare und Dokumente der FBG Schlaubetal zum Download: Antrag auf Mitgliedschaft, Satzung, Beitragssätze und Waldpflegevertrag.",
+  alternates: {
+    canonical: "/downloads",
+  },
 };
 
 export default function DownloadsPage() {
@@ -86,7 +89,7 @@ export default function DownloadsPage() {
                     download={item.filename}
                     className="inline-flex items-center justify-center rounded-lg bg-forest px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-forest-light"
                   >
-                    PDF herunterladen
+                    Herunterladen ({getDownloadFormatLabel(item)})
                   </a>
                 </div>
               </div>
