@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/lib/images";
@@ -11,11 +12,24 @@ import {
   IconWaldumbau,
 } from "@/components/icons";
 import {
-  formatAktuellesDate,
+  aktuellesIntro,
+  formatAktuellesDateLong,
   getCategoryLabel,
   getLatestAktuelles,
 } from "@/lib/aktuelles";
 import { formatAddress, site } from "@/lib/site";
+
+// Titel und Beschreibung erbt die Startseite aus dem Root-Layout.
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
+
+// Die Aktuelles-Sektion zeigt die nächsten anstehenden Termine — siehe
+// Kommentar in /aktuelles: einmal täglich neu rendern, damit vergangene
+// Termine nicht stehen bleiben.
+export const revalidate = 86400;
 
 function HeroSection() {
   return (
@@ -382,12 +396,24 @@ function AktuellesSection() {
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite leading-tight">
             Termine, Versammlungen und Themen aus der FBG
           </h2>
+          <p className="mt-4 mx-auto max-w-2xl text-lg text-anthracite-light leading-relaxed">
+            {aktuellesIntro}
+          </p>
         </AnimateIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          className={`grid grid-cols-1 gap-8 ${
+            latest.length >= 3
+              ? "md:grid-cols-3"
+              : "sm:grid-cols-2 max-w-4xl mx-auto"
+          }`}
+        >
           {latest.map((item, index) => (
             <AnimateIn key={item.id} animation="fade-up" delay={index * 100}>
-              <article className="h-full rounded-2xl border border-sand-dark/50 bg-sand/40 p-8">
+              <Link
+                href={`/aktuelles#${item.id}`}
+                className="group flex h-full flex-col rounded-2xl border border-sand-dark/50 bg-sand/40 p-8 transition-colors hover:border-forest/40 hover:bg-sand/70"
+              >
                 <p className="text-xs font-medium uppercase tracking-wider text-forest mb-2">
                   {getCategoryLabel(item.category)}
                 </p>
@@ -395,7 +421,8 @@ function AktuellesSection() {
                   dateTime={item.date}
                   className="text-sm text-anthracite-light"
                 >
-                  {formatAktuellesDate(item.date)}
+                  {formatAktuellesDateLong(item)}
+                  {item.time ? ` · ${item.time}` : ""}
                 </time>
                 <h3 className="mt-3 font-serif text-xl font-bold text-anthracite">
                   {item.title}
@@ -403,12 +430,18 @@ function AktuellesSection() {
                 <p className="mt-3 text-base text-anthracite-light leading-relaxed">
                   {item.excerpt}
                 </p>
-                {item.isPlaceholder && (
-                  <p className="mt-4 text-xs italic text-earth-dark">
-                    Beispieleintrag — wird durch die FBG ersetzt
+                {item.registration?.deadline && (
+                  <p className="mt-4 text-sm font-semibold text-earth-dark">
+                    Anmeldung bis{" "}
+                    {formatAktuellesDateLong({
+                      date: item.registration.deadline,
+                    })}
                   </p>
                 )}
-              </article>
+                <span className="mt-6 text-sm font-semibold text-forest group-hover:underline">
+                  Details ansehen
+                </span>
+              </Link>
             </AnimateIn>
           ))}
         </div>
