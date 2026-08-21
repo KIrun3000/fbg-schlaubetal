@@ -3,6 +3,9 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung — FBG Schlaubetal",
+  alternates: {
+    canonical: "/datenschutz",
+  },
 };
 
 export default function DatenschutzPage() {
@@ -48,8 +51,9 @@ export default function DatenschutzPage() {
                 {site.email}
               </a>
             </p>
-            <p className="italic text-anthracite-light/70">
-              [Vertretungsberechtigte Person — wird nach Abstimmung ergänzt]
+            <p>
+              Vertreten durch Max Freiherr Heereman von Zuydtwyck
+              (Vorstandsvorsitzender).
             </p>
           </div>
 
@@ -95,6 +99,12 @@ export default function DatenschutzPage() {
               erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung
               (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung
               jederzeit widerrufen.
+            </p>
+            <p>
+              Ihre Nachricht wird per E-Mail an unser Postfach zugestellt. Für
+              den Versand und die Speicherung dieser E-Mails nutzen wir die
+              1&amp;1 IONOS SE, Elgendorfer Straße 57, 56410 Montabaur, als
+              Auftragsverarbeiter. Die Server befinden sich in Deutschland.
             </p>
           </div>
 
@@ -153,24 +163,16 @@ export default function DatenschutzPage() {
               7. Bildmaterial
             </h2>
             <p>
-              Die Waldmotive auf dieser Website werden lokal von unserem eigenen
-              Server ausgeliefert; dabei werden keine Daten an Dritte übermittelt.
-              Einzelne weitere Bilder (etwa zu Holz, Aufforstung und
-              Luftaufnahmen) werden noch von Unsplash (unsplash.com) geladen.
-              Beim Abruf dieser Bilder kann eine Verbindung zu den Servern von
-              Unsplash hergestellt werden, wobei Ihre IP-Adresse übermittelt wird.
-            </p>
-            <p className="italic text-anthracite-light/70">
-              Hinweis: Die verbliebenen externen Bildquellen werden ersetzt,
-              sobald passende eigene Bilder vorliegen.
+              Sämtliche Bilder dieser Website werden lokal von unserem eigenen
+              Server ausgeliefert. Es werden keine Bilder von externen Anbietern
+              oder Content-Delivery-Netzwerken nachgeladen; eine Übermittlung
+              Ihrer IP-Adresse an Dritte findet dabei nicht statt.
             </p>
           </div>
 
           <div className="pt-4 border-t border-sand-dark">
-            <p className="text-sm text-anthracite-light/60 italic">
-              Diese Datenschutzerklärung ist ein Entwurf und muss vor
-              Veröffentlichung rechtlich geprüft und ggf. ergänzt werden.
-              Stand: Mai 2026.
+            <p className="text-sm text-anthracite-light/60">
+              Stand: August 2026.
             </p>
           </div>
         </div>

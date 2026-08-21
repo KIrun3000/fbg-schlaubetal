@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Über uns — FBG Schlaubetal",
   description:
     "Die FBG Schlaubetal ist eine vom Land Brandenburg anerkannte Forstbetriebsgemeinschaft. Wir bündeln die Interessen privater Waldbesitzer in ganz Brandenburg.",
+  alternates: {
+    canonical: "/ueber-uns",
+  },
 };
 
 export default function UeberUnsPage() {
@@ -99,7 +102,11 @@ export default function UeberUnsPage() {
                 {site.partner.description}
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-6 border-t border-sand-dark/50 pt-8">
+              <div className="mt-8 border-t border-sand-dark/50 pt-8">
+                <p className="text-sm font-medium uppercase tracking-widest text-anthracite-light mb-5">
+                  In Kooperation mit:
+                </p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-6">
                 <a
                   href={site.partner.url}
                   target="_blank"
@@ -129,6 +136,7 @@ export default function UeberUnsPage() {
                   </a>
                   .
                 </p>
+                </div>
               </div>
             </div>
           </AnimateIn>
@@ -200,8 +208,8 @@ export default function UeberUnsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
               <Image
-                src={images.aerialForest}
-                alt="Luftaufnahme eines Mischwaldes in Brandenburg"
+                src={images.region}
+                alt="Kiefern-Birken-Bestand, wie er für die Wälder in Brandenburg typisch ist"
                 width={600}
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
