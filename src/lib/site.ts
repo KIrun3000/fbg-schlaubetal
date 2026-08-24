@@ -3,6 +3,13 @@ export const site = {
   tagline: "Wald verstehen. Zukunft gestalten. Gemeinsam handeln.",
   url: "https://fbg-schlaubetal.de",
   email: "info@fbg-schlaubetal.de",
+  // Telefonisch ist die FBG über die Geschäftsstelle der Waldform GmbH
+  // erreichbar. Deren Geschäftsführer Richard Tschuschke ist zugleich
+  // stellvertretender Vorsitzender der FBG.
+  phone: {
+    display: "03366 5204303",
+    href: "tel:+4933665204303",
+  },
   address: {
     street: "Siedlung 18",
     zip: "15848",

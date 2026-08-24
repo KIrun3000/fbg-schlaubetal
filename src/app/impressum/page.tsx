@@ -38,7 +38,7 @@ export default function ImpressumPage() {
             <p>
               Max Freiherr Heereman von Zuydtwyck — Vorstandsvorsitzender
               <br />
-              Richard Tschutschke — Stellvertretender Vorsitzender
+              Richard Tschuschke — Stellvertretender Vorsitzender
             </p>
           </div>
 
@@ -55,6 +55,14 @@ export default function ImpressumPage() {
                 {site.email}
               </a>
               <br />
+              Telefon:{" "}
+              <a
+                href={site.phone.href}
+                className="text-forest hover:text-forest-light transition-colors"
+              >
+                {site.phone.display}
+              </a>
+              <br />
               Alternativ erreichen Sie uns über das{" "}
               <Link
                 href="/kontakt"
@@ -63,6 +71,10 @@ export default function ImpressumPage() {
                 Kontaktformular
               </Link>
               .
+            </p>
+            <p className="text-sm">
+              Der Telefonanschluss wird von der Waldform GmbH betreut, in deren
+              Geschäftsstelle die FBG telefonisch erreichbar ist.
             </p>
           </div>
 
