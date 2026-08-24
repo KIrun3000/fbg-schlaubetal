@@ -132,7 +132,6 @@ export const satzungSections: SatzungSection[] = [
     title: "Finanzierung der Aufgaben",
     blocks: [
       { type: "paragraph", text: "Der Waldverein kann zur Finanzierung seiner Aufgaben Mitgliedsbeiträge, Umlagen und sonstige Entgelte für einzelne Dienstleistungen erheben (§ 18 Abs. 1 Nr. 3 Buchst. b) BWaldG). Darüber hinaus kann der Waldverein seine Aufgaben auch durch staatliche Beihilfen finanzieren." },
-      { type: "paragraph", text: "Für Mitgliedsbeiträge gilt folgender Schlüssel: 0,50 € pro Hektar und Jahr. Über die Höhe des Beitragssatzes beschließt die Mitgliederversammlung." },
       { type: "paragraph", text: "Das Mitglied scheidet durch Kündigung oder Tod nach Maßgabe des § 3 Abs. 4 der Satzung ohne Auseinandersetzung aus dem Waldverein aus; dementsprechend besteht kein Anspruch auf ein Auseinandersetzungsguthaben. Mit Ausschluss aus dem Waldverein entfällt jeglicher Anspruch auf anteiliges Vereinsvermögen. Die Mitgliederversammlung kann Ausnahmen beschließen." },
     ],
   },
