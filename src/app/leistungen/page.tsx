@@ -201,7 +201,7 @@ export default function LeistungenPage() {
                     />
                   )}
                   <div
-                    className={`absolute -bottom-4 ${index % 2 === 0 ? "-right-4" : "-left-4"} h-20 w-20 rounded-2xl bg-forest/10 -z-10 transition-transform duration-500 group-hover:translate-y-1`}
+                    className={`hidden lg:block absolute -bottom-4 ${index % 2 === 0 ? "-right-4" : "-left-4"} h-20 w-20 rounded-2xl bg-forest/10 -z-10 transition-transform duration-500 group-hover:translate-y-1`}
                   />
                 </div>
               </AnimateIn>

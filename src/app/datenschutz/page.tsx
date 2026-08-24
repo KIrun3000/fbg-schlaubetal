@@ -12,7 +12,10 @@ export default function DatenschutzPage() {
   return (
     <section className="py-20 lg:py-24 bg-warmwhite">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <h1 className="font-serif text-4xl font-bold text-anthracite mb-10">
+        {/* "Datenschutzerklärung" ist ein Wort und passt bei 4xl nicht in
+            schmale Displays — deshalb dort eine Stufe kleiner, zusätzlich
+            Silbentrennung als Rückfall für noch engere Fenster. */}
+        <h1 className="font-serif text-3xl sm:text-4xl font-bold text-anthracite mb-10 hyphens-auto">
           Datenschutzerklärung
         </h1>
 

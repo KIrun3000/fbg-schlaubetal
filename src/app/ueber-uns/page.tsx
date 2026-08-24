@@ -80,7 +80,7 @@ export default function UeberUnsPage() {
                   height={450}
                   className="rounded-2xl object-cover w-full aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.02]"
                 />
-                <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-forest/10 -z-10 transition-transform duration-500 group-hover:-translate-x-1 group-hover:translate-y-1" />
+                <div className="hidden lg:block absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-forest/10 -z-10 transition-transform duration-500 group-hover:-translate-x-1 group-hover:translate-y-1" />
               </div>
             </AnimateIn>
           </div>
@@ -147,7 +147,9 @@ export default function UeberUnsPage() {
       <section className="py-20 lg:py-24 bg-sand">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <AnimateIn animation="fade-up" className="mx-auto max-w-3xl">
-            <h2 className="font-serif text-3xl font-bold text-anthracite leading-tight text-center">
+            {/* "Forstbetriebsgemeinschaft" sprengt bei 3xl schmale Displays —
+                eine Stufe kleiner plus Silbentrennung als Rückfall. */}
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-anthracite leading-tight text-center hyphens-auto">
               Was ist eine Forstbetriebsgemeinschaft?
             </h2>
             <p className="mt-6 text-lg text-anthracite-light leading-relaxed text-center">
@@ -214,7 +216,7 @@ export default function UeberUnsPage() {
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth -z-10" />
+              <div className="hidden lg:block absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth -z-10" />
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-sm font-medium uppercase tracking-widest text-forest mb-3">

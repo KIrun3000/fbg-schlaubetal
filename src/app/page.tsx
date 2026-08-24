@@ -314,7 +314,7 @@ function ForWaldbesitzerSection() {
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3] transition-transform duration-700 group-hover:scale-[1.02]"
               />
-              <div className="absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth -z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
+              <div className="hidden lg:block absolute -bottom-4 -right-4 h-24 w-24 rounded-2xl bg-earth -z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1" />
             </div>
           </AnimateIn>
         </div>

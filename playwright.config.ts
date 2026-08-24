@@ -7,6 +7,27 @@ export default defineConfig({
   use: {
     baseURL: "http://localhost:3000",
   },
+  // Der Testserver wird hier gestartet, damit die Tests reproduzierbar laufen
+  // und nicht von einem zufällig offenen Dev-Server abhängen.
+  //
+  // Entscheidend sind die leeren SMTP-Variablen: Ohne sie zieht der Server die
+  // echten Zugangsdaten aus .env.local und das Kontaktformular verschickt bei
+  // jedem Testlauf echte E-Mails an die FBG. Die Tests erwarten ohnehin den
+  // Zustand "Versand nicht konfiguriert" — leere Werte stellen genau den her.
+  // Getestet wird gegen einen Produktionsbuild statt gegen den Dev-Server.
+  // Der Dev-Server kompiliert jede Route beim ersten Aufruf; wenn drei
+  // Projekte parallel testen, führt das zu sporadisch fehlschlagenden
+  // Screenshots und Bild-404ern, die nichts mit der Seite zu tun haben.
+  webServer: {
+    command: "npm run build && npm run start -- --port 3000",
+    url: "http://localhost:3000",
+    reuseExistingServer: false,
+    timeout: 180000,
+    env: {
+      SMTP_USER: "",
+      SMTP_PASSWORD: "",
+    },
+  },
   projects: [
     {
       name: "Desktop",

@@ -56,8 +56,12 @@ test("Startseite — no gap line between hero and next section", async ({ page }
   const hero = page.locator("section").first();
   const box = await hero.boundingBox();
   if (box) {
+    // fullPage, weil der Übergang auf schmalen Displays unterhalb des
+    // sichtbaren Bereichs liegt — ein Clip außerhalb des Viewports lässt
+    // page.screenshot sonst fehlschlagen.
     await page.screenshot({
       path: "tests/screenshots/hero-transition.png",
+      fullPage: true,
       clip: { x: 0, y: box.y + box.height - 80, width: box.width, height: 160 },
     });
   }
@@ -107,8 +111,11 @@ test("Navigation — mobile menu works", async ({ page }) => {
   const menuButton = page.locator("button[aria-label='Hauptmenü öffnen']");
   await expect(menuButton).toBeVisible();
 
-  // Open menu
+  // Open menu. Die Links werden bewusst in der Hauptnavigation gesucht — der
+  // gleiche Linktext steht auch im Footer, ein ungenauer Selektor träfe
+  // mehrere Elemente und schlüge im Strict Mode fehl.
   await menuButton.click();
-  await expect(page.locator("text=Über uns")).toBeVisible();
-  await expect(page.locator("text=Leistungen")).toBeVisible();
+  const nav = page.getByLabel("Hauptnavigation");
+  await expect(nav.getByRole("link", { name: "Über uns" })).toBeVisible();
+  await expect(nav.getByRole("link", { name: "Leistungen" })).toBeVisible();
 });

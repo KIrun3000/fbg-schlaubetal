@@ -188,7 +188,7 @@ export default function MitgliedschaftPage() {
                 height={450}
                 className="rounded-2xl object-cover w-full aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-earth -z-10" />
+              <div className="hidden lg:block absolute -bottom-4 -left-4 h-24 w-24 rounded-2xl bg-earth -z-10" />
             </div>
           </div>
         </div>
