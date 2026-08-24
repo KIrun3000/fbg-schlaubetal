@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test.use({ baseURL: process.env.FBG_BASE_URL ?? "http://localhost:3000" });
+test.use({ baseURL: process.env.FBG_BASE_URL ?? "http://localhost:3100" });
 
 async function fillForm(
   page: import("@playwright/test").Page,

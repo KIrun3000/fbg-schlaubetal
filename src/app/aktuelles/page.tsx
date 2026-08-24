@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { AktuellesList } from "@/components/AktuellesList";
+import { EventsJsonLd } from "@/components/JsonLd";
 import { aktuellesIntro, aktuellesItems, sortAktuelles } from "@/lib/aktuelles";
 import { images } from "@/lib/images";
 
@@ -23,6 +24,7 @@ export default function AktuellesPage() {
 
   return (
     <>
+      <EventsJsonLd />
       <section className="relative bg-forest-dark overflow-hidden">
         <div className="absolute inset-0">
           <Image
