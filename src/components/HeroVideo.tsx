@@ -4,11 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { images } from "@/lib/images";
 
-// Free stock video from Pexels (Pexels License — free for all uses)
-// "Drone Footage of a Dense Forest" by James Cheney — misty forest at sunrise
+// "Drone Footage of a Dense Forest" von James Cheney — Nebelwald bei Sonnenaufgang
+// Pexels License (frei für jede Nutzung, keine Namensnennung erforderlich)
 // https://www.pexels.com/video/drone-footage-of-a-dense-forest-3177845/
-const VIDEO_URL =
-  "https://videos.pexels.com/video-files/3177845/3177845-hd_1920_1080_24fps.mp4";
+//
+// Bewusst lokal abgelegt statt von videos.pexels.com geladen: Ein externer
+// Abruf würde die IP-Adresse jedes Besuchers an Pexels übermitteln und der
+// Zusicherung in der Datenschutzerklärung widersprechen. Die Datei ist dafür
+// auf 720p reduziert (rund 1 MB statt 11 MB) — mehr braucht es nicht, weil das
+// Video hinter einem Overlay mit 65 % Deckkraft läuft.
+const VIDEO_URL = "/videos/hero-wald-luftaufnahme.mp4";
 
 const POSTER_MIN_MS = 5000;
 
@@ -65,7 +70,10 @@ export function HeroVideo() {
         sizes="100vw"
       />
 
-      {/* Desktop: video fades in after poster minimum display time */}
+      {/* Desktop: video fades in after poster minimum display time.
+          preload="metadata": Das Standbild bleibt ohnehin mindestens fünf
+          Sekunden stehen — das Video muss deshalb nicht schon beim Seitenaufbau
+          vollständig geladen sein und den Rest der Seite ausbremsen. */}
       {!isMobile && (
         <video
           ref={videoRef}
@@ -73,7 +81,7 @@ export function HeroVideo() {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1500 ${
             showVideo ? "opacity-65" : "opacity-0"
           }`}
