@@ -81,7 +81,10 @@ export default function DatenschutzPage() {
             <p>
               Eine Zusammenführung dieser Daten mit anderen Datenquellen wird
               nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6
-              Abs. 1 lit. f DSGVO.
+              Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt im
+              technisch sicheren Betrieb der Website. Die Log-Daten werden nach
+              spätestens sieben Tagen gelöscht, sofern sie nicht zur Aufklärung
+              eines konkreten Sicherheitsvorfalls benötigt werden.
             </p>
 
             <h3 className="font-serif text-lg font-bold text-anthracite">
@@ -98,7 +101,16 @@ export default function DatenschutzPage() {
               Die Verarbeitung der in das Kontaktformular eingegebenen Daten
               erfolgt somit ausschließlich auf Grundlage Ihrer Einwilligung
               (Art. 6 Abs. 1 lit. a DSGVO). Sie können diese Einwilligung
-              jederzeit widerrufen.
+              jederzeit mit Wirkung für die Zukunft widerrufen — eine formlose
+              Mitteilung per E-Mail genügt. Die Rechtmäßigkeit der bis zum
+              Widerruf erfolgten Verarbeitung bleibt vom Widerruf unberührt.
+            </p>
+            <p>
+              Wir speichern Ihre Anfrage, bis sie abschließend bearbeitet ist,
+              und löschen sie anschließend — spätestens jedoch, wenn der Zweck
+              der Speicherung entfällt. Zwingende gesetzliche Bestimmungen,
+              insbesondere handels- und steuerrechtliche Aufbewahrungsfristen,
+              bleiben unberührt.
             </p>
             <p>
               Ihre Nachricht wird per E-Mail an unser Postfach zugestellt. Für
@@ -134,6 +146,28 @@ export default function DatenschutzPage() {
                 Der Verarbeitung zu widersprechen (Art. 21 DSGVO)
               </li>
             </ul>
+            <p>
+              Wenden Sie sich dazu formlos an die oben genannte verantwortliche
+              Stelle.
+            </p>
+
+            <h3 className="font-serif text-lg font-bold text-anthracite">
+              Beschwerderecht bei der Aufsichtsbehörde
+            </h3>
+            <p>
+              Unabhängig davon haben Sie das Recht, sich bei einer
+              Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer
+              personenbezogenen Daten zu beschweren (Art. 77 DSGVO). Zuständig
+              für uns ist:
+            </p>
+            <p>
+              Die Landesbeauftragte für den Datenschutz und für das Recht auf
+              Akteneinsicht Brandenburg
+              <br />
+              Stahnsdorfer Damm 77
+              <br />
+              14532 Kleinmachnow
+            </p>
           </div>
 
           <div>
@@ -141,9 +175,19 @@ export default function DatenschutzPage() {
               5. Hosting
             </h2>
             <p>
-              Diese Website wird bei Vercel Inc. gehostet. Die Server befinden
-              sich in der EU. Weitere Informationen finden Sie in der
-              Datenschutzerklärung von Vercel.
+              Diese Website wird bei der Vercel Inc., 340 S Lemon Ave #4133,
+              Walnut, CA 91789, USA, gehostet. Die Auslieferung erfolgt über
+              Server in der Europäischen Union; ein Zugriff aus den USA lässt
+              sich technisch jedoch nicht ausschließen.
+            </p>
+            <p>
+              Mit Vercel besteht ein Vertrag über die Auftragsverarbeitung
+              gemäß Art. 28 DSGVO. Vercel ist unter dem EU-US Data Privacy
+              Framework zertifiziert; die Europäische Kommission hat für
+              zertifizierte Unternehmen mit ihrem Angemessenheitsbeschluss vom
+              10. Juli 2023 ein angemessenes Datenschutzniveau festgestellt.
+              Eine Übermittlung in die USA ist damit auf dieser Grundlage
+              zulässig.
             </p>
           </div>
 
@@ -160,13 +204,39 @@ export default function DatenschutzPage() {
 
           <div>
             <h2 className="font-serif text-xl font-bold text-anthracite">
-              7. Bildmaterial
+              7. Bild- und Videomaterial
             </h2>
             <p>
-              Sämtliche Bilder dieser Website werden lokal von unserem eigenen
-              Server ausgeliefert. Es werden keine Bilder von externen Anbietern
-              oder Content-Delivery-Netzwerken nachgeladen; eine Übermittlung
-              Ihrer IP-Adresse an Dritte findet dabei nicht statt.
+              Sämtliche Bilder und das Video auf der Startseite werden lokal von
+              unserem eigenen Server ausgeliefert. Es werden keine Medien von
+              externen Anbietern oder Content-Delivery-Netzwerken nachgeladen;
+              eine Übermittlung Ihrer IP-Adresse an Dritte findet dabei nicht
+              statt.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-serif text-xl font-bold text-anthracite">
+              8. Kartendarstellung (OpenStreetMap)
+            </h2>
+            <p>
+              Auf unserer Kontaktseite bieten wir eine Karte von OpenStreetMap
+              an. Anbieter ist die OpenStreetMap Foundation, St John&rsquo;s
+              Innovation Centre, Cowley Road, Cambridge, CB4 0WS,
+              Vereinigtes Königreich.
+            </p>
+            <p>
+              Die Karte wird nicht automatisch geladen. Erst wenn Sie die
+              Schaltfläche „Karte laden“ anklicken, wird eine Verbindung zu den
+              Servern von OpenStreetMap aufgebaut und dabei Ihre IP-Adresse
+              übermittelt. Ohne diesen Klick findet keinerlei Datenübertragung
+              statt. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1
+              lit. a DSGVO, die Sie durch das Anklicken erteilen.
+            </p>
+            <p>
+              Für das Vereinigte Königreich hat die Europäische Kommission mit
+              Angemessenheitsbeschluss ein angemessenes Datenschutzniveau
+              festgestellt.
             </p>
           </div>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function ImpressumPage() {
         <div className="prose prose-lg max-w-none text-anthracite-light leading-relaxed space-y-8">
           <div>
             <h2 className="font-serif text-xl font-bold text-anthracite mt-0">
-              Angaben gemäß § 5 TMG
+              Angaben gemäß § 5 DDG
             </h2>
             <p>
               {site.name}
@@ -54,18 +55,26 @@ export default function ImpressumPage() {
                 {site.email}
               </a>
               <br />
-              <span className="italic text-anthracite-light/70">
-                Telefon: [wird ergänzt]
-              </span>
+              Alternativ erreichen Sie uns über das{" "}
+              <Link
+                href="/kontakt"
+                className="text-forest hover:text-forest-light transition-colors"
+              >
+                Kontaktformular
+              </Link>
+              .
             </p>
           </div>
 
           <div>
             <h2 className="font-serif text-xl font-bold text-anthracite">
-              Registereintrag
+              Rechtsform
             </h2>
-            <p className="italic text-anthracite-light/70">
-              [Registergericht und Registernummer — wird nach Abstimmung ergänzt]
+            <p>
+              Forstbetriebsgemeinschaft Schlaubetal w. V. — wirtschaftlicher
+              Verein mit Rechtsfähigkeit durch staatliche Verleihung gemäß § 22
+              BGB in Verbindung mit § 19 BWaldG. Eine Eintragung in das
+              Vereinsregister erfolgt bei dieser Rechtsform nicht.
             </p>
             <p>
               Anerkannte Forstbetriebsgemeinschaft nach § 16 BWaldG, anerkannt
@@ -75,7 +84,7 @@ export default function ImpressumPage() {
 
           <div>
             <h2 className="font-serif text-xl font-bold text-anthracite">
-              Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+              Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </h2>
             <p>
               Max Freiherr Heereman von Zuydtwyck
@@ -97,8 +106,8 @@ export default function ImpressumPage() {
               Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
               Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
               können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind
-              wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach
-              den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind
+              wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach
+              den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind
               wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
               gespeicherte fremde Informationen zu überwachen oder nach Umständen
               zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
