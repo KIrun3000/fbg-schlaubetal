@@ -94,6 +94,19 @@ export default function ImpressumPage() {
             </p>
           </div>
 
+          {/*
+            Steuernummer, nicht Umsatzsteuer-Identifikationsnummer: Nur letztere
+            verlangt § 5 Abs. 1 Nr. 6 DDG, und auch die nur, sofern eine
+            vorhanden ist. Die Angabe hier ist also freiwillig und kann
+            ersatzlos entfallen, ohne dass das Impressum unvollständig wird.
+          */}
+          <div>
+            <h2 className="font-serif text-xl font-bold text-anthracite">
+              Steuernummer
+            </h2>
+            <p>061/141/12338</p>
+          </div>
+
           <div>
             <h2 className="font-serif text-xl font-bold text-anthracite">
               Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV

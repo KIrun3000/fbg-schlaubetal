@@ -34,7 +34,7 @@ export function OrganizationJsonLd() {
         alternateName: site.name,
         url: site.url,
         logo: `${site.url}/images/logo/logo-fbg.svg`,
-        image: `${site.url}/opengraph-image.jpg`,
+        image: `${site.url}/og-image.jpg`,
         email: site.email,
         telephone: site.phone.display,
         description:
